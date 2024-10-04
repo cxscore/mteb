@@ -3,6 +3,7 @@ from __future__ import annotations
 from .deu.GermanSTSBenchmarkSTS import *
 from .eng.BiossesSTS import *
 from .eng.SickrSTS import *
+from .eng.CxsSTS import *
 from .eng.STS12STS import *
 from .eng.STS13STS import *
 from .eng.STS14STS import *

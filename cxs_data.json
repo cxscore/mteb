@@ -1,0 +1,5 @@
+{"split": "test", "sentence1": "organic potato chips", "sentence2": "mountain spring water", "score": 0.8}
+{"split": "test", "sentence1": "pineapple chunk box", "sentence2": "organic pinapple", "score": 4.0}
+{"split": "test", "sentence1": "white bread one pound", "sentence2": "whole grain bread", "score": 2.0}
+{"split": "test", "sentence1": "strawberry yogurt", "sentence2": "plain yogurt", "score": 1.8}
+

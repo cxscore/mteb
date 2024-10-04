@@ -102,6 +102,7 @@ MTEB_MAIN_EN = Benchmark(
             "RedditClusteringP2P",
             "SCIDOCS",
             "SICK-R",
+            "CXS-STS",
             "STS12",
             "STS13",
             "STS14",
