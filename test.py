@@ -23,7 +23,7 @@ def custom_collate_fn(batch):
     return {'sentence1': sentences1, 'sentence2': sentences2, 'score': torch.tensor(labels, dtype=torch.float)}
 
 # Load training data
-s1_list, s2_list, score_list = []
+s1_list, s2_list, score_list = [], [], []
 with open('localization.json', 'r') as f:
     for line in f:
         entry = json.loads(line)
