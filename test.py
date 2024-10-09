@@ -1,5 +1,6 @@
 import json
 import mteb
+from datasets import Dataset, DatasetInfo
 from sentence_transformers import SentenceTransformer, InputExample, losses, SentenceTransformerTrainer
 from torch.utils.data import DataLoader
 from sentence_transformers import SentenceTransformerTrainingArguments
@@ -8,6 +9,7 @@ import torch.optim as optim
 from torch.optim import AdamW
 import matplotlib.pyplot as plt
 from transformers import TrainerCallback, TrainerState, TrainerControl,get_linear_schedule_with_warmup
+
 
 # Check if MPS is available
 device = torch.device('mps' if torch.backends.mps.is_built() else 'cpu')
@@ -35,6 +37,13 @@ model = SentenceTransformer(model_name).to(device)
 
 # Prepare DataLoader and CosineSimilarityLoss
 train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16, collate_fn=custom_collate_fn)
+train_dataset = Dataset.from_dict(train_examples)
+train_dataset.info = DatasetInfo(description="This dataset contains sentence pairs for similarity tasks.", 
+                                  citation="Your citation here.", 
+                                  features=train_dataset.features, 
+                                  homepage="https://your.homepage.url", 
+                                  license="Apache License 2.0", 
+                                  dataset_name="MySentencePairDataset")
 loss_func = losses.CosineSimilarityLoss(model)
 
 # Set up training arguments
@@ -78,9 +87,10 @@ loss_logger = LossLoggerCallback()
 trainer = SentenceTransformerTrainer(
     model=model,
     args=training_args,  # Use the training arguments
-    train_dataset=train_dataloader,
+    train_dataset=train_dataset,
     loss=loss_func,
-    optimizers=(optimizer, scheduler)  # Pass optimizer and scheduler
+    optimizers=(optimizer, scheduler),  # Pass optimizer and scheduler
+    callbacks=[loss_logger]  # Log the losses
 )
 
 # Start training
