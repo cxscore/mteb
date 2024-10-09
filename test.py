@@ -1,11 +1,10 @@
 import json
 import mteb
 import datasets
-from sentence_transformers import SentenceTransformer, InputExample, losses
+from sentence_transformers import SentenceTransformer, InputExample, losses, SentenceTransformerTrainer
 from torch.utils.data import DataLoader
 import torch
 import torch.optim as optim
-import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
 # Check if MPS is available
@@ -40,56 +39,46 @@ loss_func = losses.CosineSimilarityLoss(model)
 learning_rate = 2e-5
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
+# Custom callback to log training loss
+class LossLoggerCallback:
+    def __init__(self):
+        self.losses = []
+
+    def __call__(self, loss_value, epoch, step):
+        # Log the loss for each step
+        self.losses.append(loss_value)
+        if step % 100 == 0:  # Optionally print loss every 100 steps
+            print(f"Epoch: {epoch}, Step: {step}, Loss: {loss_value:.4f}")
+
+# Instantiate the logger
+loss_logger = LossLoggerCallback()
+
 # Training loop parameters
 num_epochs = 100
-mse_values = []
 
-# Training loop
-for epoch in range(num_epochs):
-    model.train()
-    epoch_mse = 0.0
-    num_batches = 0
-    
-    for batch in train_dataloader:
-        optimizer.zero_grad()
-        
-        # Move inputs to device
-        batch_sentences1 = batch['sentence1']
-        batch_sentences2 = batch['sentence2']
-        batch_labels = batch['score'].to(device)
-        
-        # Encode sentences
-        encoded_texts1 = model.encode(batch_sentences1, convert_to_tensor=True).to(device)
-        encoded_texts2 = model.encode(batch_sentences2, convert_to_tensor=True).to(device)
-        
-        # Compute loss
-        loss = loss_func(encoded_texts1, encoded_texts2, batch_labels)
-        
-        # Backpropagation and optimization
-        loss.backward()
-        optimizer.step()
+# Trainer with custom logging callback
+trainer = SentenceTransformerTrainer(
+    model=model,
+    train_dataset=train_examples,
+    loss=loss_func,
+    optimizer=optimizer,
+    epochs=num_epochs,
+    warmup_steps=100,  # Optional: for learning rate warmup
+    callback=loss_logger  # Log the losses
+)
 
-        # Compute cosine similarity (which the model tries to predict)
-        cosine_sim = F.cosine_similarity(encoded_texts1, encoded_texts2)
-        
-        # Calculate Mean Squared Error (MSE) for the current batch
-        mse = F.mse_loss(cosine_sim, batch_labels)
-        epoch_mse += mse.item()
-        num_batches += 1
-    
-    avg_epoch_mse = epoch_mse / num_batches
-    mse_values.append(avg_epoch_mse)
-    print(f"Epoch {epoch + 1}/{num_epochs}, MSE: {avg_epoch_mse:.4f}")
+# Start training
+trainer.train()
 
 # Save the fine-tuned model
 model.save('fine_tuned_sbert')
 
-# Plotting the MSE over epochs
+# Plotting the loss after training
 plt.figure(figsize=(10, 6))
-plt.plot(range(1, num_epochs + 1), mse_values, label='Training MSE')
-plt.xlabel('Epochs')
-plt.ylabel('MSE')
-plt.title('Training MSE Over Epochs')
+plt.plot(loss_logger.losses, label='Training Loss')
+plt.xlabel('Steps')
+plt.ylabel('Loss')
+plt.title('Training Loss Over Steps')
 plt.legend()
 plt.show()
 
