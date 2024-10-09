@@ -8,7 +8,7 @@ import torch
 import torch.optim as optim
 from torch.optim import AdamW
 import matplotlib.pyplot as plt
-from transformers import get_linear_schedule_with_warmup
+from transformers import TrainerCallback, TrainerState, TrainerControl,get_linear_schedule_with_warmup
 
 # Check if MPS is available
 device = torch.device('mps' if torch.has_mps else 'cpu')
@@ -41,15 +41,14 @@ loss_func = losses.CosineSimilarityLoss(model)
 # Set up training arguments
 training_args = SentenceTransformerTrainingArguments(
     output_dir="fine_tuned_sbert",
-    num_train_epochs=10,  # Adjust the number of epochs
+    num_train_epochs=100,  # Adjust the number of epochs
     per_device_train_batch_size=16,  # Batch size for training
     learning_rate=2e-5,  # Learning rate
     warmup_ratio=0.1,  # Warmup for the learning rate scheduler
     save_strategy="epoch",  # Save model after every epoch
     logging_steps=100,  # Log every 100 steps
-    evaluation_strategy="steps",  # Evaluation strategy
+    eval_strategy="steps",  # Evaluation strategy
     eval_steps=100,  # Evaluate every 100 steps
-    save_total_limit=2,  # Limit to 2 model saves
     fp16=True,  # Enable 16-bit precision if supported
     run_name="fine_tuned_sbert_run"  # Tracking run name for logging
 )
@@ -62,15 +61,16 @@ num_train_steps = len(train_dataloader) * training_args.num_train_epochs
 warmup_steps = int(training_args.warmup_ratio * num_train_steps)
 scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps, num_training_steps=num_train_steps)
 
-# Custom callback to log training loss
-class LossLoggerCallback:
+class LossLoggerCallback(TrainerCallback):
     def __init__(self):
         self.losses = []
 
-    def __call__(self, loss_value, epoch, step):
-        self.losses.append(loss_value)
-        if step % 100 == 0:  # Optionally print loss every 100 steps
-            print(f"Epoch: {epoch}, Step: {step}, Loss: {loss_value:.4f}")
+    # Called every time there is a log update
+    def on_log(self, args, state: TrainerState, control: TrainerControl, logs=None, **kwargs):
+        if logs is not None and "loss" in logs:
+            self.losses.append(logs["loss"])  # Log the loss
+            if state.is_local_process_zero:
+                print(f"Step: {state.global_step}, Loss: {logs['loss']:.4f}")
 
 # Instantiate the logger
 loss_logger = LossLoggerCallback()
