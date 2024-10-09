@@ -14,14 +14,6 @@ from transformers import TrainerCallback, TrainerState, TrainerControl,get_linea
 # Check if MPS is available
 device = torch.device('mps' if torch.backends.mps.is_built() else 'cpu')
 
-# Custom collate function
-def custom_collate_fn(batch):
-    sentences1 = [example.texts[0] for example in batch]
-    sentences2 = [example.texts[1] for example in batch]
-    labels = [example.label for example in batch]
-    
-    return {'sentence1': sentences1, 'sentence2': sentences2, 'score': torch.tensor(labels, dtype=torch.float)}
-
 # Load training data
 s1_list, s2_list, score_list = [], [], []
 with open('localization.json', 'r') as f:
@@ -32,13 +24,10 @@ with open('localization.json', 'r') as f:
         score_list.append(entry['score'])
 
 
-
-# Define the sentence-transformers model
 model_name = "avsolatorio/GIST-large-Embedding-v0"
 model = SentenceTransformer(model_name).to(device)
 
-# Prepare DataLoader and CosineSimilarityLoss
-#train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16, collate_fn=custom_collate_fn)
+
 train_dataset = Dataset.from_dict({
     "sentence1": s1_list,
     "sentence2": s2_list,
@@ -54,11 +43,11 @@ training_args = SentenceTransformerTrainingArguments(
     per_device_train_batch_size=16,  # Batch size for training
     learning_rate=2e-5,  # Learning rate
     warmup_ratio=0.1,  # Warmup for the learning rate scheduler
-    save_strategy="epoch",  # Save model after every epoch
+    save_strategy="steps",  # Save model after every epoch
     logging_steps=100,  # Log every 100 steps
     eval_strategy="steps",  # Evaluation strategy
     eval_steps=100,  # Evaluate every 100 steps
-    fp16=True,  # Enable 16-bit precision if supported
+    save_total_limit=2,  # Number of maximum checkpoints to save
     run_name="fine_tuned_sbert_run"  # Tracking run name for logging
 )
 
