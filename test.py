@@ -82,7 +82,7 @@ trainer = SentenceTransformerTrainer(
     train_dataset=train_examples,
     loss=loss_func,
     optimizers=(optimizer, scheduler),  # Pass optimizer and scheduler
-    callback=loss_logger  # Log the losses
+    callbacks=[loss_logger]  # Log the losses
 )
 
 # Start training
