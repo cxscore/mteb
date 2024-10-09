@@ -5,6 +5,8 @@ from sentence_transformers import SentenceTransformer, InputExample, losses, Sen
 from torch.utils.data import DataLoader
 import torch
 import torch.optim as optim
+from torch.optim import AdamW
+from transformers import get_linear_schedule_with_warmup
 import matplotlib.pyplot as plt
 
 # Check if MPS is available
@@ -35,9 +37,14 @@ model = SentenceTransformer(model_name).to(device)
 train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16, collate_fn=custom_collate_fn)
 loss_func = losses.CosineSimilarityLoss(model)
 
-# Adam optimizer with learning rate
+# AdamW optimizer with learning rate
 learning_rate = 2e-5
-optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+optimizer = AdamW(model.parameters(), lr=learning_rate)
+
+# Scheduler: Linear warmup followed by linear decay
+num_train_steps = len(train_dataloader) * 100  # Assuming 100 epochs
+warmup_steps = int(0.1 * num_train_steps)  # 10% of total steps for warmup
+scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps, num_training_steps=num_train_steps)
 
 # Custom callback to log training loss
 class LossLoggerCallback:
@@ -61,9 +68,9 @@ trainer = SentenceTransformerTrainer(
     model=model,
     train_dataset=train_examples,
     loss=loss_func,
-    optimizer=optimizer,
     epochs=num_epochs,
-    warmup_steps=100,  # Optional: for learning rate warmup
+    warmup_steps=warmup_steps,  # Optional: for learning rate warmup
+    optimizers=(optimizer, scheduler),  # Set the optimizer and scheduler
     callback=loss_logger  # Log the losses
 )
 
