@@ -44,12 +44,7 @@ train_dataset = Dataset.from_dict({
     "sentence2": s2_list,
     "label": score_list,
 })
-train_dataset.info = DatasetInfo(description="This dataset contains sentence pairs for similarity tasks.", 
-                                  citation="Your citation here.", 
-                                  features=train_dataset.features, 
-                                  homepage="https://your.homepage.url", 
-                                  license="Apache License 2.0", 
-                                  dataset_name="MySentencePairDataset")
+
 loss_func = losses.CosineSimilarityLoss(model)
 
 # Set up training arguments
