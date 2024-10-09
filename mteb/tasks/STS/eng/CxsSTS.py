@@ -36,7 +36,7 @@ class CxsSTS(AbsTaskSTS):
         print("loading data")
         if self.data_loaded:
             return
-        self.dataset =  datasets.load_dataset("json", data_files={"test": "cxs_data.json"})
+        self.dataset =  datasets.load_dataset("json", data_files={"test": "localization.json"})
         
         self.dataset_transform()
         self.data_loaded = True
