@@ -1,6 +1,5 @@
 import json
 import mteb
-import datasets
 from sentence_transformers import SentenceTransformer, InputExample, losses, SentenceTransformerTrainer
 from torch.utils.data import DataLoader
 from sentence_transformers import SentenceTransformerTrainingArguments
@@ -11,7 +10,7 @@ import matplotlib.pyplot as plt
 from transformers import TrainerCallback, TrainerState, TrainerControl,get_linear_schedule_with_warmup
 
 # Check if MPS is available
-device = torch.device('mps' if torch.has_mps else 'cpu')
+device = torch.device('mps' if torch.backends.mps.is_built() else 'cpu')
 
 # Custom collate function
 def custom_collate_fn(batch):
@@ -79,7 +78,7 @@ loss_logger = LossLoggerCallback()
 trainer = SentenceTransformerTrainer(
     model=model,
     args=training_args,  # Use the training arguments
-    train_dataset=train_examples,
+    train_dataset=train_dataloader,
     loss=loss_func,
     optimizers=(optimizer, scheduler),  # Pass optimizer and scheduler
     callbacks=[loss_logger]  # Log the losses
