@@ -3,11 +3,12 @@ import mteb
 import datasets
 from sentence_transformers import SentenceTransformer, InputExample, losses, SentenceTransformerTrainer
 from torch.utils.data import DataLoader
+from sentence_transformers import SentenceTransformerTrainingArguments
 import torch
 import torch.optim as optim
 from torch.optim import AdamW
-from transformers import get_linear_schedule_with_warmup
 import matplotlib.pyplot as plt
+from transformers import get_linear_schedule_with_warmup
 
 # Check if MPS is available
 device = torch.device('mps' if torch.has_mps else 'cpu')
@@ -37,13 +38,28 @@ model = SentenceTransformer(model_name).to(device)
 train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16, collate_fn=custom_collate_fn)
 loss_func = losses.CosineSimilarityLoss(model)
 
+# Set up training arguments
+training_args = SentenceTransformerTrainingArguments(
+    output_dir="fine_tuned_sbert",
+    num_train_epochs=10,  # Adjust the number of epochs
+    per_device_train_batch_size=16,  # Batch size for training
+    learning_rate=2e-5,  # Learning rate
+    warmup_ratio=0.1,  # Warmup for the learning rate scheduler
+    save_strategy="epoch",  # Save model after every epoch
+    logging_steps=100,  # Log every 100 steps
+    evaluation_strategy="steps",  # Evaluation strategy
+    eval_steps=100,  # Evaluate every 100 steps
+    save_total_limit=2,  # Limit to 2 model saves
+    fp16=True,  # Enable 16-bit precision if supported
+    run_name="fine_tuned_sbert_run"  # Tracking run name for logging
+)
+
 # AdamW optimizer with learning rate
-learning_rate = 2e-5
-optimizer = AdamW(model.parameters(), lr=learning_rate)
+optimizer = AdamW(model.parameters(), lr=training_args.learning_rate)
 
 # Scheduler: Linear warmup followed by linear decay
-num_train_steps = len(train_dataloader) * 100  # Assuming 100 epochs
-warmup_steps = int(0.1 * num_train_steps)  # 10% of total steps for warmup
+num_train_steps = len(train_dataloader) * training_args.num_train_epochs
+warmup_steps = int(training_args.warmup_ratio * num_train_steps)
 scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps, num_training_steps=num_train_steps)
 
 # Custom callback to log training loss
@@ -52,7 +68,6 @@ class LossLoggerCallback:
         self.losses = []
 
     def __call__(self, loss_value, epoch, step):
-        # Log the loss for each step
         self.losses.append(loss_value)
         if step % 100 == 0:  # Optionally print loss every 100 steps
             print(f"Epoch: {epoch}, Step: {step}, Loss: {loss_value:.4f}")
@@ -60,17 +75,13 @@ class LossLoggerCallback:
 # Instantiate the logger
 loss_logger = LossLoggerCallback()
 
-# Training loop parameters
-num_epochs = 100
-
-# Trainer with custom logging callback
+# Trainer with custom logging callback and arguments
 trainer = SentenceTransformerTrainer(
     model=model,
+    args=training_args,  # Use the training arguments
     train_dataset=train_examples,
     loss=loss_func,
-    epochs=num_epochs,
-    warmup_steps=warmup_steps,  # Optional: for learning rate warmup
-    optimizers=(optimizer, scheduler),  # Set the optimizer and scheduler
+    optimizers=(optimizer, scheduler),  # Pass optimizer and scheduler
     callback=loss_logger  # Log the losses
 )
 
