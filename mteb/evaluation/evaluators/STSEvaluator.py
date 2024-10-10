@@ -79,19 +79,24 @@ class STSEvaluator(Evaluator):
             pearson, _ = pearsonr(self.gold_scores, similarity_scores)
             spearman, _ = spearmanr(self.gold_scores, similarity_scores)
         else:
-            # if model does not have a similarity function, we assume the cosine similarity
             pearson = cosine_pearson
             spearman = cosine_spearman
 
-        # Prepare data for JSON output (sentence pairs, embeddings, and cosine similarity)
+        
         entries = []
-        for s1, s2, emb1, emb2, cos_sim in zip(self.sentences1, self.sentences2, embeddings1, embeddings2, cosine_scores):
+        for s1, s2, emb1, emb2, cos_sim, gold_score in zip(
+            self.sentences1, self.sentences2, embeddings1, embeddings2, cosine_scores, self.gold_scores
+        ):
+            cosine_pearson_pair, _ = pearsonr([gold_score], [cos_sim])
+            
             entry = {
                 "sentence1": s1,
                 "sentence2": s2,
                 "embedding1": emb1.tolist(),  
                 "embedding2": emb2.tolist(),  
                 "cos_similarity": float(cos_sim),  
+                "score": float(gold_score), 
+                "cosine_pearson": float(cosine_pearson_pair),  
             }
             entries.append(entry)
 
@@ -102,10 +107,8 @@ class STSEvaluator(Evaluator):
         logger.info(f"Results saved to {output_filename}")
 
         return {
-            # using the models own similarity score
             "pearson": pearson,
             "spearman": spearman,
-            # generic similarity scores
             "cosine_pearson": cosine_pearson,
             "cosine_spearman": cosine_spearman,
             "manhattan_pearson": manhatten_pearson,
