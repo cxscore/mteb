@@ -42,7 +42,8 @@ embeddings_s2 = model.encode(s2_list, convert_to_tensor=True)
 
 # Calculate cosine similarity between each pair of sentences
 cos_similarities = cosine_similarity(embeddings_s1.cpu().numpy(), embeddings_s2.cpu().numpy())
-
+print(cos_similarities)
+print(type(cos_similarities ))
 entries = []
 for idx, (s1, s2, emb1, emb2, cos_sim) in enumerate(zip(s1_list, s2_list, embeddings_s1, embeddings_s2, cos_similarities)):
     print(cos_sim)
