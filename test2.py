@@ -1,7 +1,7 @@
 import json
 import mteb
 import torch
-from sentence_transformers import SentenceTransformer, InputExample, losses, SentenceTransformerTrainer
+from sentence_transformers import SentenceTransformer, InputExample, losses
 from torch.utils.data import DataLoader
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
@@ -50,9 +50,9 @@ for s1, s2, emb1, emb2 in zip(s1_list, s2_list, embeddings_s1, embeddings_s2):
     entry = {
         "sentence1": s1,
         "sentence2": s2,
-        "embedding1": emb1.cpu().numpy().tolist(),  # Convert tensor to list
-        "embedding2": emb2.cpu().numpy().tolist(),  # Convert tensor to list
-        "cos_similarity": float(cos_sim)  # Single cosine similarity score
+        "embedding1": emb1.cpu().numpy().tolist(),  
+        "embedding2": emb2.cpu().numpy().tolist(), 
+        "cos_similarity": float(cos_sim) 
     }
     entries.append(entry)
 

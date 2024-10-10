@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import json  # Add JSON for exporting the results
 from typing import Any
 
 import numpy as np
@@ -12,12 +13,10 @@ from sklearn.metrics.pairwise import (
 )
 
 from mteb.encoder_interface import Encoder, EncoderWithSimilarity
-
 from .Evaluator import Evaluator
 from .model_encode import model_encode
 
 logger = logging.getLogger(__name__)
-
 
 class STSEvaluator(Evaluator):
     def __init__(
@@ -68,10 +67,10 @@ class STSEvaluator(Evaluator):
 
         similarity_scores = None
         if hasattr(model, "similarity_pairwise"):
-            similarity_scores = model.similarity_pairwise(embeddings1, embeddings2)  # type: ignore
+            similarity_scores = model.similarity_pairwise(embeddings1, embeddings2) 
         elif hasattr(model, "similarity"):
             _similarity_scores = [
-                float(model.similarity(e1, e2))  # type: ignore
+                float(model.similarity(e1, e2)) 
                 for e1, e2 in zip(embeddings1, embeddings2)
             ]
             similarity_scores = np.array(_similarity_scores)
@@ -83,6 +82,24 @@ class STSEvaluator(Evaluator):
             # if model does not have a similarity function, we assume the cosine similarity
             pearson = cosine_pearson
             spearman = cosine_spearman
+
+        # Prepare data for JSON output (sentence pairs, embeddings, and cosine similarity)
+        entries = []
+        for s1, s2, emb1, emb2, cos_sim in zip(self.sentences1, self.sentences2, embeddings1, embeddings2, cosine_scores):
+            entry = {
+                "sentence1": s1,
+                "sentence2": s2,
+                "embedding1": emb1.tolist(),  
+                "embedding2": emb2.tolist(),  
+                "cos_similarity": float(cos_sim),  
+            }
+            entries.append(entry)
+
+        # Save the data to a JSON file
+        output_filename = 'embeddings_and_similarities_eval.json'
+        with open(output_filename, 'w') as f:
+            json.dump(entries, f, indent=4)
+        logger.info(f"Results saved to {output_filename}")
 
         return {
             # using the models own similarity score
