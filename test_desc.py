@@ -32,8 +32,8 @@ with open('products.json', 'r') as f:
             train_examples.append(
                 InputExample(texts=[sentence1_desc, sentence2_desc], label=float(entry['score']))
             )
-            
-with open('combined_products.jsonl', 'w') as f_out:
+
+with open('combined_products.json', 'w') as f_out:
     for example in train_examples:
         # Convert InputExample to dictionary format for JSON serialization
         json_line = {
