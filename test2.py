@@ -45,12 +45,14 @@ cos_similarities = cosine_similarity(embeddings_s1.cpu().numpy(), embeddings_s2.
 
 entries = []
 for idx, (s1, s2, emb1, emb2, cos_sim) in enumerate(zip(s1_list, s2_list, embeddings_s1, embeddings_s2, cos_similarities)):
+    print(cos_sim)
+    print(type(cos_sim))
     entry = {
         "sentence1": s1,
         "sentence2": s2,
         "embedding1": emb1.cpu().numpy().tolist(),  # Convert tensor to list
         "embedding2": emb2.cpu().numpy().tolist(),  # Convert tensor to list
-        "cos_similarity": cos_sim  # Cosine similarity
+        "cos_similarity": float(cos_sim)  # Cosine similarity
     }
     entries.append(entry)
 
