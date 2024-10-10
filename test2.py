@@ -54,6 +54,7 @@ for idx, (s1, s2, emb1, emb2, cos_sim) in enumerate(zip(s1_list, s2_list, embedd
     }
     entries.append(entry)
 
+print(type(entries))
 # Save to JSON file
 with open('embeddings_and_similarities.json', 'w') as f:
     json.dump(entries, f, indent=4)
