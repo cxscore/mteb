@@ -9,8 +9,7 @@ import torch.optim as optim
 from torch.optim import AdamW
 import matplotlib.pyplot as plt
 from transformers import TrainerCallback, TrainerState, TrainerControl,get_linear_schedule_with_warmup
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
+
 
 # Check if MPS is available
 device = torch.device('mps' if torch.backends.mps.is_built() else 'cpu')
@@ -37,69 +36,66 @@ train_dataset = Dataset.from_dict({
 
 loss_func = losses.CosineSimilarityLoss(model)
 
-model.fit(train_objectives=[(train_dataset, loss_func)], epochs=100)
-model.save('fine_tuned_sbert')
-
 # Set up training arguments
-# training_args = SentenceTransformerTrainingArguments(
-#     output_dir="fine_tuned_sbert",
-#     num_train_epochs=100,  # Adjust the number of epochs
-#     per_device_train_batch_size=16,  # Batch size for training
-#     learning_rate=5e-6,  # Learning rate
-#     warmup_ratio=0.1,  # Warmup for the learning rate scheduler
-#     save_strategy="steps",  # Save model after every epoch
-#     logging_steps=100,  # Log every 100 steps
-#     save_total_limit=2,  # Number of maximum checkpoints to save
-#     run_name="fine_tuned_sbert_run"  # Tracking run name for logging
-# )
+training_args = SentenceTransformerTrainingArguments(
+    output_dir="fine_tuned_sbert",
+    num_train_epochs=100,  # Adjust the number of epochs
+    per_device_train_batch_size=16,  # Batch size for training
+    learning_rate=5e-6,  # Learning rate
+    warmup_ratio=0.1,  # Warmup for the learning rate scheduler
+    save_strategy="steps",  # Save model after every epoch
+    logging_steps=100,  # Log every 100 steps
+    save_total_limit=2,  # Number of maximum checkpoints to save
+    run_name="fine_tuned_sbert_run"  # Tracking run name for logging
+)
 
-# # AdamW optimizer with learning rate
-# optimizer = AdamW(model.parameters(), lr=training_args.learning_rate)
+# AdamW optimizer with learning rate
+optimizer = AdamW(model.parameters(), lr=training_args.learning_rate)
 
-# # Scheduler: Linear warmup followed by linear decay
-# num_train_steps = len(train_dataset) * training_args.num_train_epochs
-# warmup_steps = int(training_args.warmup_ratio * num_train_steps)
-# scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps, num_training_steps=num_train_steps)
+# Scheduler: Linear warmup followed by linear decay
+num_train_steps = len(train_dataset) * training_args.num_train_epochs
+warmup_steps = int(training_args.warmup_ratio * num_train_steps)
+scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps, num_training_steps=num_train_steps)
 
-# class LossLoggerCallback(TrainerCallback):
-#     def __init__(self):
-#         self.losses = []
+class LossLoggerCallback(TrainerCallback):
+    def __init__(self):
+        self.losses = []
 
-#     # Called every time there is a log update
-#     def on_log(self, args, state: TrainerState, control: TrainerControl, logs=None, **kwargs):
-#         if logs is not None and "loss" in logs:
-#             self.losses.append(logs["loss"])  # Log the loss
-#             if state.is_local_process_zero:
-#                 print(f"Step: {state.global_step}, Loss: {logs['loss']:.4f}")
+    # Called every time there is a log update
+    def on_log(self, args, state: TrainerState, control: TrainerControl, logs=None, **kwargs):
+        if logs is not None and "loss" in logs:
+            self.losses.append(logs["loss"])  # Log the loss
+            if state.is_local_process_zero:
+                print(f"Step: {state.global_step}, Loss: {logs['loss']:.4f}")
 
-# # Instantiate the logger
-# loss_logger = LossLoggerCallback()
+# Instantiate the logger
+loss_logger = LossLoggerCallback()
 
-# # Trainer with custom logging callback and arguments
-# trainer = SentenceTransformerTrainer(
-#     model=model,
-#     args=training_args,  # Use the training arguments
-#     train_dataset=train_dataset,
-#     eval_dataset=train_dataset,  # Use the same dataset for evaluation
-#     loss=loss_func,
-#     optimizers=(optimizer, scheduler),  # Pass optimizer and scheduler
-#     callbacks=[loss_logger]  # Log the losses
-# )
+# Trainer with custom logging callback and arguments
+trainer = SentenceTransformerTrainer(
+    model=model,
+    args=training_args,  # Use the training arguments
+    train_dataset=train_dataset,
+    eval_dataset=train_dataset,  # Use the same dataset for evaluation
+    loss=loss_func,
+    optimizers=(optimizer, scheduler),  # Pass optimizer and scheduler
+    callbacks=[loss_logger]  # Log the losses
+)
 
-# # Start training
-# trainer.train()
+# Start training
+trainer.train()
 
 # Save the fine-tuned model
 model.save('fine_tuned_sbert')
 
 # Plotting the loss after training
-# plt.figure(figsize=(10, 6))
-# plt.plot(loss_logger.losses, label='Training Loss')
-# plt.xlabel('Steps')
-# plt.ylabel('Loss')
-# plt.title('Training Loss Over Steps')
-# plt.legend()
-# plt.show()
+plt.figure(figsize=(10, 6))
+plt.plot(loss_logger.losses, label='Training Loss')
+plt.xlabel('Steps')
+plt.ylabel('Loss')
+plt.title('Training Loss Over Steps')
+plt.legend()
+plt.show()
 
 # Optionally re-load the trained model
 model = SentenceTransformer('fine_tuned_sbert')
@@ -109,31 +105,3 @@ tasks = mteb.get_tasks(tasks=["CXS-STS"])
 evaluation = mteb.MTEB(tasks=tasks)
 results = evaluation.run(model, output_folder=f"results/{model_name}")
 
-# Generate embeddings for each sentence pair
-embeddings_s1 = model.encode(s1_list, convert_to_tensor=True, device=device)
-embeddings_s2 = model.encode(s2_list, convert_to_tensor=True, device=device)
-
-# Calculate cosine similarity between each pair of sentences
-cos_similarities = cosine_similarity(embeddings_s1.cpu().numpy(), embeddings_s2.cpu().numpy())
-
-# Print embeddings and cosine similarity scores for each entry
-for idx, (s1, s2, emb1, emb2, cos_sim) in enumerate(zip(s1_list, s2_list, embeddings_s1, embeddings_s2, cos_similarities)):
-    print(f"Sentence 1: {s1}")
-    print(f"Sentence 2: {s2}")
-    print(f"Embedding Sentence 1: {emb1.cpu().numpy()}")
-    print(f"Embedding Sentence 2: {emb2.cpu().numpy()}")
-    print(f"Cosine Similarity: {cos_sim:.4f}")
-    print("-" * 50)
-
-# Optionally, store the embeddings and cosine similarities in a dictionary or save them for further use
-embeddings_and_similarities = {
-    'sentence1': s1_list,
-    'sentence2': s2_list,
-    'embedding1': [emb.cpu().numpy().tolist() for emb in embeddings_s1],
-    'embedding2': [emb.cpu().numpy().tolist() for emb in embeddings_s2],
-    'cosine_similarity': cos_similarities.tolist()
-}
-
-# Save embeddings and similarities to a JSON file
-with open('embeddings_and_similarities.json', 'w') as f:
-    json.dump(embeddings_and_similarities, f, indent=4)
