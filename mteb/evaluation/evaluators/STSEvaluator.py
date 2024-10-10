@@ -99,7 +99,7 @@ class STSEvaluator(Evaluator):
             entries.append(entry)
 
         # Save the data to a JSON file
-        output_filename = 'embeddings_and_similarities_eval.json'
+        output_filename = 'embeddings_and_similarities_desc.json'
         with open(output_filename, 'w') as f:
             json.dump(entries, f, indent=4)
         logger.info(f"Results saved to {output_filename}")
