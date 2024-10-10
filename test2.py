@@ -49,7 +49,7 @@ for idx, (s1, s2, emb1, emb2, cos_sim) in enumerate(zip(s1_list, s2_list, embedd
     print(f"Sentence 2: {s2}")
     print(f"Embedding Sentence 1: {emb1.cpu().numpy()}")
     print(f"Embedding Sentence 2: {emb2.cpu().numpy()}")
-    print(f"Cosine Similarity: {cos_sim:.4f}")
+    print(f"Cosine Similarity: {cos_sim}")
     print("-" * 50)
 
 # Optionally, store the embeddings and cosine similarities in a dictionary or save them for further use
