@@ -85,11 +85,9 @@ class STSEvaluator(Evaluator):
         print("Cosine Pearson:", cosine_pearson)
         print(type(cosine_pearson))
         entries = []
-        for s1, s2, emb1, emb2, cos_sim, gold_score, cos_pearson in zip(
-            self.sentences1, self.sentences2, embeddings1, embeddings2, cosine_scores, self.gold_scores, cosine_pearson
+        for s1, s2, emb1, emb2, cos_sim, gold_score in zip(
+            self.sentences1, self.sentences2, embeddings1, embeddings2, cosine_scores, self.gold_scores
         ):
-            print(cos_pearson)
-            print(type(cos_pearson))
             entry = {
                 "sentence1": s1,
                 "sentence2": s2,
@@ -97,7 +95,6 @@ class STSEvaluator(Evaluator):
                 "embedding2": emb2.tolist(),  
                 "cos_similarity": float(cos_sim),  
                 "score": float(gold_score), 
-                "cosine_pearson": float(cos_pearson),  
             }
             entries.append(entry)
 
