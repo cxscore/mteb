@@ -37,8 +37,8 @@ with open('combined_products.json', 'w') as f_out:
     for example in train_examples:
         # Convert InputExample to dictionary format for JSON serialization
         json_line = {
-            "sentence1_desc": example.texts[0],
-            "sentence2_desc": example.texts[1],
+            "sentence1": example.texts[0],
+            "sentence2": example.texts[1],
             "score": example.label
         }
         # Write each example as a line in the JSONL file
