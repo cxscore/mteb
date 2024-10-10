@@ -32,23 +32,23 @@ with open('products.json', 'r') as f:
             train_examples.append(
                 InputExample(texts=[sentence1_desc, sentence2_desc], label=float(entry['score']))
             )
+            
+with open('combined_products.jsonl', 'w') as f_out:
+    for example in train_examples:
+        # Convert InputExample to dictionary format for JSON serialization
+        json_line = {
+            "sentence1_desc": example.texts[0],
+            "sentence2_desc": example.texts[1],
+            "score": example.label
+        }
+        # Write each example as a line in the JSONL file
+        f_out.write(json.dumps(json_line) + '\n')
 
 # Define the sentence-transformers model name
 model_name = "avsolatorio/GIST-large-Embedding-v0"
 
 # Load pre-trained sentence transformer model
 model = SentenceTransformer(model_name)
-
-# Create DataLoader and define the loss function
-train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16)
-loss = losses.CosineSimilarityLoss(model)
-
-# Train the model
-model.fit(train_objectives=[(train_dataloader, loss)], epochs=100)
-model.save('fine_tuned_sbert')
-
-# Load the fine-tuned model
-model = SentenceTransformer('fine_tuned_sbert')
 
 # Run MTEB evaluation
 tasks = mteb.get_tasks(tasks=["CXS-STS"])
