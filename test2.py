@@ -64,3 +64,11 @@ embeddings_and_similarities = {
 # Save embeddings and similarities to a JSON file
 with open('embeddings_and_similarities.json', 'w') as f:
     json.dump(embeddings_and_similarities, f, indent=4)
+
+# Optionally re-load the trained model
+model = SentenceTransformer('fine_tuned_sbert')
+
+# Run MTEB evaluation
+tasks = mteb.get_tasks(tasks=["CXS-STS"])
+evaluation = mteb.MTEB(tasks=tasks)
+results = evaluation.run(model, output_folder=f"results/{model_name}")
