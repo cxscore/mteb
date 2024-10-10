@@ -78,6 +78,7 @@ trainer = SentenceTransformerTrainer(
     model=model,
     args=training_args,  # Use the training arguments
     train_dataset=train_dataset,
+    eval_dataset=train_dataset,  # Use the same dataset for evaluation
     loss=loss_func,
     optimizers=(optimizer, scheduler),  # Pass optimizer and scheduler
     callbacks=[loss_logger]  # Log the losses
