@@ -41,12 +41,10 @@ training_args = SentenceTransformerTrainingArguments(
     output_dir="fine_tuned_sbert",
     num_train_epochs=100,  # Adjust the number of epochs
     per_device_train_batch_size=16,  # Batch size for training
-    learning_rate=2e-5,  # Learning rate
+    learning_rate=5e-6,  # Learning rate
     warmup_ratio=0.1,  # Warmup for the learning rate scheduler
     save_strategy="steps",  # Save model after every epoch
     logging_steps=100,  # Log every 100 steps
-    eval_strategy="steps",  # Evaluation strategy
-    eval_steps=100,  # Evaluate every 100 steps
     save_total_limit=2,  # Number of maximum checkpoints to save
     run_name="fine_tuned_sbert_run"  # Tracking run name for logging
 )
