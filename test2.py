@@ -43,29 +43,21 @@ embeddings_s2 = model.encode(s2_list, convert_to_tensor=True)
 # Calculate cosine similarity between each pair of sentences
 cos_similarities = cosine_similarity(embeddings_s1.cpu().numpy(), embeddings_s2.cpu().numpy())
 
-# Print embeddings and cosine similarity scores for each entry
+entries = []
 for idx, (s1, s2, emb1, emb2, cos_sim) in enumerate(zip(s1_list, s2_list, embeddings_s1, embeddings_s2, cos_similarities)):
-    print(f"Sentence 1: {s1}")
-    print(f"Sentence 2: {s2}")
-    print(f"Embedding Sentence 1: {emb1.cpu().numpy()}")
-    print(f"Embedding Sentence 2: {emb2.cpu().numpy()}")
-    print(f"Cosine Similarity: {cos_sim}")
-    print("-" * 50)
+    entry = {
+        "sentence1": s1,
+        "sentence2": s2,
+        "embedding1": emb1.cpu().numpy().tolist(),  # Convert tensor to list
+        "embedding2": emb2.cpu().numpy().tolist(),  # Convert tensor to list
+        "cos_similarity": cos_sim  # Cosine similarity
+    }
+    entries.append(entry)
 
-# Optionally, store the embeddings and cosine similarities in a dictionary or save them for further use
-embeddings_and_similarities = {
-    'sentence1': s1_list,
-    'sentence2': s2_list,
-    'embedding1': [emb.cpu().numpy().tolist() for emb in embeddings_s1],
-    'embedding2': [emb.cpu().numpy().tolist() for emb in embeddings_s2],
-    'cosine_similarity': cos_similarities.tolist()
-}
-
-# Save embeddings and similarities to a JSON file
+# Save to JSON file
 with open('embeddings_and_similarities.json', 'w') as f:
-    json.dump(embeddings_and_similarities, f, indent=4)
+    json.dump(entries, f, indent=4)
 
-# Optionally re-load the trained model
 model = SentenceTransformer('fine_tuned_sbert')
 
 # Run MTEB evaluation
