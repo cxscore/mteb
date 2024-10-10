@@ -39,7 +39,7 @@ loss_func = losses.CosineSimilarityLoss(model)
 # Set up training arguments
 training_args = SentenceTransformerTrainingArguments(
     output_dir="fine_tuned_sbert",
-    num_train_epochs=100,  # Adjust the number of epochs
+    num_train_epochs=1000,  # Adjust the number of epochs
     per_device_train_batch_size=16,  # Batch size for training
     learning_rate=5e-6,  # Learning rate
     warmup_ratio=0.1,  # Warmup for the learning rate scheduler
