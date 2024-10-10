@@ -14,14 +14,16 @@ def find_description(product_name, products_desc):
     return None
 
 # Load product descriptions from products_desc.json
-with open('products_desc.json', 'r') as f:
-    products_desc = json.load(f)
+products_desc = []
+with open('products_desc.jsonl', 'r') as f:
+    for line in f:
+        products_desc.append(json.loads(line))  # Parse each line as a JSON object
 
-# Load sentence pairs and scores from products.json and match descriptions
+# Load sentence pairs and scores from products.jsonl and match descriptions
 train_examples = []
-with open('products.json', 'r') as f:
-    products = json.load(f)
-    for entry in products:
+with open('products.jsonl', 'r') as f:
+    for line in f:
+        entry = json.loads(line)  # Parse each line as a JSON object
         sentence1_desc = find_description(entry['sentence1'], products_desc)
         sentence2_desc = find_description(entry['sentence2'], products_desc)
         
