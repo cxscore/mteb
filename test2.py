@@ -8,7 +8,7 @@ import numpy as np
 
 # Load training examples from the JSON file
 train_examples = []
-with open('localization.json', 'r') as f:
+with open('temp.json', 'r') as f:
     for line in f:
         # Parse each line as a separate JSON object
         entry = json.loads(line)
