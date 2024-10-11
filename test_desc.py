@@ -54,5 +54,3 @@ model = SentenceTransformer(model_name)
 tasks = mteb.get_tasks(tasks=["CXS-STS"])
 evaluation = mteb.MTEB(tasks=tasks)
 results = evaluation.run(model, output_folder=f"results/{model_name}")
-
-print("Results saved to 'embeddings_and_similarities_desc.json'")
