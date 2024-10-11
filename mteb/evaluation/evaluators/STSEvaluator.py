@@ -102,6 +102,7 @@ class STSEvaluator(Evaluator):
         output_filename = 'embeddings_and_similarities_groceries.json'
         with open(output_filename, 'w') as f:
             json.dump(entries, f, indent=4)
+        print("Results saved to 'embeddings_and_similarities_groceries.json'")
         logger.info(f"Results saved to {output_filename}")
 
         return {
