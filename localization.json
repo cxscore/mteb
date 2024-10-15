@@ -37,6 +37,3 @@
 {"sentence1":"turkey","sentence2":"Chicken","score":4.0,"Complementary Product":"Mashed potatoes","Complementarity Value":5.0,"Substitutable Product":"Ham","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
 {"sentence1":"curd cheese","sentence2":"CreamCheese","score":4.0,"Complementary Product":"Crackers","Complementarity Value":5.0,"Substitutable Product":"Ricotta Cheese","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
 {"sentence1":"Soda","sentence2":"Soft Drinks","score":4.0,"Complementary Product":"Snack","Complementarity Value":5.0,"Substitutable Product":"Sparkling Water","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Apple","sentence2":"Steak","score":1.0,"Complementary Product":"Snack","Complementarity Value":5.0,"Substitutable Product":"Sparkling Water","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Wine","sentence2":"Ice Cream","score":1.0,"Complementary Product":"Snack","Complementarity Value":5.0,"Substitutable Product":"Sparkling Water","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Beer","sentence2":"Pizza","score":1.0,"Complementary Product":"Snack","Complementarity Value":5.0,"Substitutable Product":"Sparkling Water","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
