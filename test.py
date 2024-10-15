@@ -99,7 +99,7 @@ embeddings_s1 = model.encode(s1_list, convert_to_tensor=True)
 embeddings_s2 = model.encode(s2_list, convert_to_tensor=True)
 
 # Normalize the actual scores to 0-1 range
-min_score, max_score = min(score_list), max(score_list)
+min_score, max_score = 0, 5
 normalized_scores = [(score - min_score) / (max_score - min_score) for score in score_list]
 
 # Calculate cosine similarities and store them
