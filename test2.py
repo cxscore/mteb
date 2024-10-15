@@ -28,7 +28,7 @@ s2_list = [example.texts[1] for example in train_examples]
 actual_scores = [example.label for example in train_examples]
 
 # Normalize the actual scores to 0-1 range
-min_score, max_score = min(actual_scores), max(actual_scores)
+min_score, max_score = 0, 5
 normalized_scores = [(score - min_score) / (max_score - min_score) for score in actual_scores]
 
 # Generate embeddings for each sentence pair
