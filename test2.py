@@ -45,6 +45,20 @@ for emb1, emb2 in zip(embeddings_s1, embeddings_s2):
 pearson_corr, _ = pearsonr(cosine_similarities, normalized_scores)
 print(f"Pearson correlation between cosine similarities and actual scores: {pearson_corr}")
 
+threshold = 0.25
+for s1, s2, cos_sim, norm_score in zip(s1_list, s2_list, cosine_similarities, normalized_scores):
+    diff = abs(cos_sim - norm_score)
+    diff_percentage = diff * 100
+    
+    # If the difference exceeds 25%, print details
+    if diff > threshold:
+        print(f"\nDifference exceeds 25%:")
+        print(f"Sentence 1: {s1}")
+        print(f"Sentence 2: {s2}")
+        print(f"Cosine similarity: {cos_sim:.4f}")
+        print(f"Normalized score: {norm_score:.4f}")
+        print(f"Difference percentage: {diff_percentage:.2f}%")
+
 # Compute the average difference between cosine similarities and normalized scores
 differences = [abs(cos_sim - norm_score) for cos_sim, norm_score in zip(cosine_similarities, normalized_scores)]
 avg_difference = np.mean(differences)
@@ -52,7 +66,7 @@ avg_difference_percentage = avg_difference * 100
 print(f"Average difference percentage: {avg_difference_percentage:.2f}%")
 
 # Check if the average difference is within 25%
-threshold = 0.25
+
 if avg_difference <= threshold:
     print(f"Average difference is within the acceptable range of 25%.")
 else:
