@@ -1,4 +1,5 @@
 import json
+import mteb
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.stats import pearsonr
@@ -56,3 +57,7 @@ if avg_difference <= threshold:
     print(f"Average difference is within the acceptable range of 25%.")
 else:
     print(f"Warning: Average difference exceeds the acceptable range of 25%.")
+# Run MTEB evaluation
+tasks = mteb.get_tasks(tasks=["CXS-STS"])
+evaluation = mteb.MTEB(tasks=tasks)
+results = evaluation.run(model, output_folder=f"results/{model_name}")
