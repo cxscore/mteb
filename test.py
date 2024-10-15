@@ -1,7 +1,7 @@
 import json
 import mteb
 from datasets import Dataset
-from sentence_transformers import SentenceTransformer, losses, SentenceTransformerTrainer
+from sentence_transformers import SentenceTransformer, losses, SentenceTransformerTrainer, SentenceTransformerTrainingArguments
 from torch.optim import AdamW
 import torch
 import matplotlib.pyplot as plt
