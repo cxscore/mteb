@@ -27,7 +27,7 @@ loss = losses.CosineSimilarityLoss(model)
 # Train the model
 model.fit(train_objectives=[(train_dataloader, loss)], epochs=100)
 model.save('fine_tuned_sbert')
-
+model = SentenceTransformer('fine_tuned_sbert')
 
 s1_list = [example.texts[0] for example in train_examples]
 s2_list = [example.texts[1] for example in train_examples]
