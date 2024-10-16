@@ -63,7 +63,7 @@ differences = [abs(cos_sim - norm_score) for cos_sim, norm_score in zip(cosine_s
 avg_difference = np.mean(differences)
 avg_difference_percentage = avg_difference * 100
 print(f"Average difference percentage: {avg_difference_percentage:.2f}%")
-
+print(f"Maximum difference percentage: {np.max(differences * 100)}")
 # Check if the average difference is within 25%
 
 if avg_difference <= threshold:
