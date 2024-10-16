@@ -24,7 +24,7 @@ model = SentenceTransformer(model_name)
 train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16)
 loss = losses.CosineSimilarityLoss(model)
 # Train the model
-model.fit(train_objectives=[(train_dataloader, loss)], epochs=100)
+model.fit(train_objectives=[(train_dataloader, loss)], epochs=1000)
 model.save('fine_tuned_sbert')
 model = SentenceTransformer('fine_tuned_sbert')
 
