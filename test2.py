@@ -12,7 +12,7 @@ with open('localization.json', 'r') as f:
     for line in f:
         entry = json.loads(line)
         train_examples.append(
-            InputExample(texts=[entry['sentence1'], entry['sentence2']], label=float(entry['score']))
+            InputExample(texts=[entry['sentence1'], entry['sentence2']], label=float(entry['score'] / 5.0))
         )
 
 model_name = "avsolatorio/GIST-large-Embedding-v0"
