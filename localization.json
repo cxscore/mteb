@@ -67,4 +67,4 @@
 {"sentence1":"Almonds","sentence2":"Cashews","score":4.0,"Complementary Product":"Dried Fruit","Complementarity Value":5.0,"Substitutable Product":"Walnuts","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
 {"sentence1":"Pizza","sentence2":"Calzone","score":4.0,"Complementary Product":"Tomato Sauce","Complementarity Value":5.0,"Substitutable Product":"Flatbread Pizza","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
 {"sentence1":"Macaroni","sentence2":"Penne","score":4.0,"Complementary Product":"Cheese Sauce","Complementarity Value":5.0,"Substitutable Product":"Rigatoni","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Butter","sentence2":"Ghee","score":4.0,"Complementary Product":"Toast","Complementarity Value":5.0,"Substitutable Product":"Margarine","Substitutability
+{"sentence1":"Butter","sentence2":"Ghee","score":4.0,"Complementary Product":"Toast","Complementarity Value":5.0,"Substitutable Product":"Margarine","Substitutability Value":3.0,"Feature Vector":"[4,5,3]"}
