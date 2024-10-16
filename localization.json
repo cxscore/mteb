@@ -1,101 +1,488 @@
-{"sentence1":"Whole Wheat Bread","sentence2":"Multigrain Bread","score":4.0,"Complementary Product":"Peanut Butter","Complementarity Value":5.0,"Substitutable Product":"White Bread","Substitutability Value":4.0,"Feature Vector":"[4, 5, 4]"}
-{"sentence1":"White Rice","sentence2":"Basmati Rice","score":3.0,"Complementary Product":"Soy sauce","Complementarity Value":4.0,"Substitutable Product":"Brown Rice","Substitutability Value":4.0,"Feature Vector":"[3, 4, 4]"}
-{"sentence1":"Regular Milk","sentence2":"Almond Milk","score":3.0,"Complementary Product":"Cereal","Complementarity Value":5.0,"Substitutable Product":"Oat Milk","Substitutability Value":4.0,"Feature Vector":"[3, 5, 4]"}
-{"sentence1":"Eggs","sentence2":"Egg Whites","score":4.0,"Complementary Product":"Cheese","Complementarity Value":4.0,"Substitutable Product":"Tofu","Substitutability Value":3.0,"Feature Vector":"[4, 4, 3]"}
-{"sentence1":"Green Tea","sentence2":"Herbal Tea","score":4.0,"Complementary Product":"Honey","Complementarity Value":5.0,"Substitutable Product":"Black Tea","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Pasta","sentence2":"Spaghetti","score":4.0,"Complementary Product":"Marinara Sauce","Complementarity Value":5.0,"Substitutable Product":"Noodles","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Regular Cheese","sentence2":"Cottage Cheese","score":4.0,"Complementary Product":"Crackers","Complementarity Value":4.0,"Substitutable Product":"Cream Cheese","Substitutability Value":3.0,"Feature Vector":"[4, 4, 3]"}
-{"sentence1":"Potatoes","sentence2":"Sweet Potatoes","score":3.0,"Complementary Product":"Sour Cream","Complementarity Value":4.0,"Substitutable Product":"Cauliflower","Substitutability Value":3.0,"Feature Vector":"[3, 4, 3]"}
-{"sentence1":"Curd","sentence2":"Greek Yogurt","score":4.0,"Complementary Product":"Salt","Complementarity Value":5.0,"Substitutable Product":"Buttermilk","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Peanut Butter","sentence2":"Almond Butter","score":4.0,"Complementary Product":"Jam","Complementarity Value":5.0,"Substitutable Product":"Nutella","Substitutability Value":4.0,"Feature Vector":"[4, 5, 4]"}
-{"sentence1":"tropical fruit","sentence2":"mango","score":4.0,"Complementary Product":"Yogurt","Complementarity Value":5.0,"Substitutable Product":"Berries","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"whole milk","sentence2":"Skim Milk","score":3.0,"Complementary Product":"Cereal","Complementarity Value":5.0,"Substitutable Product":"Soy Milk","Substitutability Value":4.0,"Feature Vector":"[3, 5, 4]"}
-{"sentence1":"pip fruit","sentence2":"Apples","score":4.0,"Complementary Product":"Peanut Butter","Complementarity Value":3.0,"Substitutable Product":"Pears","Substitutability Value":3.0,"Feature Vector":"[4, 3, 3]"}
-{"sentence1":"rolls/buns","sentence2":"Bread","score":4.0,"Complementary Product":"Butter","Complementarity Value":5.0,"Substitutable Product":"Bagels","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"citrus fruit","sentence2":"Oranges","score":4.0,"Complementary Product":"Sugar","Complementarity Value":3.0,"Substitutable Product":"Lemons","Substitutability Value":4.0,"Feature Vector":"[4, 3, 4]"}
-{"sentence1":"beef","sentence2":"Lamb","score":3.0,"Complementary Product":"BBQ Sauce","Complementarity Value":5.0,"Substitutable Product":"Pork","Substitutability Value":4.0,"Feature Vector":"[3, 5, 4]"}
-{"sentence1":"frankfurter","sentence2":"Hot Dogs","score":4.0,"Complementary Product":"Baked beans","Complementarity Value":5.0,"Substitutable Product":"Sausages","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"chicken","sentence2":"Turkey","score":3.0,"Complementary Product":"Mashed potato","Complementarity Value":5.0,"Substitutable Product":"Fish","Substitutability Value":3.0,"Feature Vector":"[3, 5, 3]"}
-{"sentence1":"butter","sentence2":"Margarine","score":4.0,"Complementary Product":"Jam","Complementarity Value":5.0,"Substitutable Product":"Ghee","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"fruit/vegetable juice","sentence2":"Smoothie","score":4.0,"Complementary Product":"Floral extracts","Complementarity Value":4.0,"Substitutable Product":"Flavored Water","Substitutability Value":3.0,"Feature Vector":"[4, 4, 3]"}
-{"sentence1":"packaged fruit/vegetables","sentence2":"Canned Vegetables","score":4.0,"Complementary Product":"Dip","Complementarity Value":3.0,"Substitutable Product":"Frozen Vegetables","Substitutability Value":4.0,"Feature Vector":"[4, 3, 4]"}
-{"sentence1":"chocolate","sentence2":"Dark Chocolate","score":4.0,"Complementary Product":"Nuts","Complementarity Value":5.0,"Substitutable Product":"Candy","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"butter milk","sentence2":"Yogurt Drink","score":3.0,"Complementary Product":"Spices","Complementarity Value":4.0,"Substitutable Product":"Skimmed milk","Substitutability Value":3.0,"Feature Vector":"[3, 4, 3]"}
-{"sentence1":"bottled water","sentence2":"Sparkling Water","score":3.0,"Complementary Product":"Lemon Slice","Complementarity Value":4.0,"Substitutable Product":"Flavored Water","Substitutability Value":3.0,"Feature Vector":"[3, 4, 3]"}
-{"sentence1":"yogurt","sentence2":"Greek Yogurt","score":4.0,"Complementary Product":"Sugar","Complementarity Value":5.0,"Substitutable Product":"Curd","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"sausage","sentence2":"Hot Dogs","score":4.0,"Complementary Product":"Baked beans","Complementarity Value":5.0,"Substitutable Product":"Frankfurter","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"brown bread","sentence2":"Whole Wheat Bread","score":4.0,"Complementary Product":"Butter","Complementarity Value":5.0,"Substitutable Product":"Multigrain Bread","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"hamburger meat","sentence2":"Ground chicken","score":4.0,"Complementary Product":"Burger Buns","Complementarity Value":5.0,"Substitutable Product":"Ground Turkey","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"root vegetables","sentence2":"Carrots","score":4.0,"Complementary Product":"Dip","Complementarity Value":4.0,"Substitutable Product":"Sweet potatoes","Substitutability Value":3.0,"Feature Vector":"[4, 4, 3]"}
-{"sentence1":"pork","sentence2":"Bacon","score":4.0,"Complementary Product":"Barbecue Sauce","Complementarity Value":5.0,"Substitutable Product":"Beef","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"pastry","sentence2":"Croissant","score":4.0,"Complementary Product":"Sugar","Complementarity Value":5.0,"Substitutable Product":"Donut","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"canned beer","sentence2":"Bottled Beer","score":4.0,"Complementary Product":"Chips","Complementarity Value":5.0,"Substitutable Product":"Canned Soda","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"berries","sentence2":"Strawberries","score":4.0,"Complementary Product":"Yogurt","Complementarity Value":5.0,"Substitutable Product":"Cherries","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"coffee","sentence2":"Espresso","score":4.0,"Complementary Product":"Milk","Complementarity Value":5.0,"Substitutable Product":"Tea","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"misc. beverages","sentence2":"Soft Drinks","score":3.0,"Complementary Product":"Snack","Complementarity Value":4.0,"Substitutable Product":"Flavored Water","Substitutability Value":3.0,"Feature Vector":"[3, 4, 3]"}
-{"sentence1":"ham","sentence2":"Bacon","score":4.0,"Complementary Product":"Cheese","Complementarity Value":5.0,"Substitutable Product":"Turkey","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"turkey","sentence2":"Chicken","score":4.0,"Complementary Product":"Mashed potatoes","Complementarity Value":5.0,"Substitutable Product":"Ham","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"curd cheese","sentence2":"CreamCheese","score":4.0,"Complementary Product":"Crackers","Complementarity Value":5.0,"Substitutable Product":"Ricotta Cheese","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Soda","sentence2":"Soft Drinks","score":4.0,"Complementary Product":"Snack","Complementarity Value":5.0,"Substitutable Product":"Sparkling Water","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Vanilla Ice Cream","sentence2":"Chocolate Ice Cream","score":4.0,"Complementary Product":"Waffle Cone","Complementarity Value":5.0,"Substitutable Product":"Strawberry Ice Cream","Substitutability Value":4.0,"Feature Vector":"[4, 5, 4]"}
-{"sentence1":"Orange Juice","sentence2":"Apple Juice","score":4.0,"Complementary Product":"Cereal","Complementarity Value":5.0,"Substitutable Product":"Grape Juice","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Corn Tortillas","sentence2":"Flour Tortillas","score":4.0,"Complementary Product":"Guacamole","Complementarity Value":5.0,"Substitutable Product":"Lettuce Wrap","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Black Beans","sentence2":"Pinto Beans","score":4.0,"Complementary Product":"Rice","Complementarity Value":5.0,"Substitutable Product":"Lentils","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Oats","sentence2":"Granola","score":4.0,"Complementary Product":"Milk","Complementarity Value":5.0,"Substitutable Product":"Muesli","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Spinach","sentence2":"Kale","score":4.0,"Complementary Product":"Olive Oil","Complementarity Value":5.0,"Substitutable Product":"Arugula","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Salmon","sentence2":"Trout","score":4.0,"Complementary Product":"Lemon","Complementarity Value":5.0,"Substitutable Product":"Tilapia","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Mozzarella Cheese","sentence2":"Parmesan Cheese","score":4.0,"Complementary Product":"Tomato Sauce","Complementarity Value":5.0,"Substitutable Product":"Cheddar Cheese","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Bagels","sentence2":"English Muffins","score":4.0,"Complementary Product":"Cream Cheese","Complementarity Value":5.0,"Substitutable Product":"Toast","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Pancakes","sentence2":"Waffles","score":4.0,"Complementary Product":"Syrup","Complementarity Value":5.0,"Substitutable Product":"French Toast","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Tacos","sentence2":"Burritos","score":4.0,"Complementary Product":"Salsa","Complementarity Value":5.0,"Substitutable Product":"Quesadillas","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Broccoli","sentence2":"Cauliflower","score":4.0,"Complementary Product":"Cheese Sauce","Complementarity Value":5.0,"Substitutable Product":"Brussels Sprouts","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Canned Tuna","sentence2":"Canned Salmon","score":4.0,"Complementary Product":"Mayonnaise","Complementarity Value":4.0,"Substitutable Product":"Canned Sardines","Substitutability Value":3.0,"Feature Vector":"[4, 4, 3]"}
-{"sentence1":"Basmati Rice","sentence2":"Jasmine Rice","score":4.0,"Complementary Product":"Curry","Complementarity Value":5.0,"Substitutable Product":"Sushi Rice","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Soy Milk","sentence2":"Almond Milk","score":4.0,"Complementary Product":"Cereal","Complementarity Value":5.0,"Substitutable Product":"Coconut Milk","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Ground Beef","sentence2":"Ground Turkey","score":4.0,"Complementary Product":"Burger Buns","Complementarity Value":5.0,"Substitutable Product":"Ground Chicken","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Lettuce","sentence2":"Spinach","score":4.0,"Complementary Product":"Salad Dressing","Complementarity Value":5.0,"Substitutable Product":"Arugula","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Chips","sentence2":"Pretzels","score":4.0,"Complementary Product":"Dip","Complementarity Value":5.0,"Substitutable Product":"Popcorn","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Muffins","sentence2":"Cupcakes","score":4.0,"Complementary Product":"Butter","Complementarity Value":5.0,"Substitutable Product":"Doughnuts","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Lasagna","sentence2":"Baked Ziti","score":4.0,"Complementary Product":"Garlic Bread","Complementarity Value":5.0,"Substitutable Product":"Macaroni","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Cottage Cheese","sentence2":"Ricotta Cheese","score":4.0,"Complementary Product":"Crackers","Complementarity Value":5.0,"Substitutable Product":"Cream Cheese","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Bacon","sentence2":"Sausage","score":4.0,"Complementary Product":"Eggs","Complementarity Value":5.0,"Substitutable Product":"Ham","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Hot Chocolate","sentence2":"Mocha","score":4.0,"Complementary Product":"Whipped Cream","Complementarity Value":5.0,"Substitutable Product":"Chocolate Milk","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Cookies","sentence2":"Brownies","score":4.0,"Complementary Product":"Milk","Complementarity Value":5.0,"Substitutable Product":"Cupcakes","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Pita Bread","sentence2":"Naan","score":4.0,"Complementary Product":"Hummus","Complementarity Value":5.0,"Substitutable Product":"Flatbread","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Shrimp","sentence2":"Scallops","score":4.0,"Complementary Product":"Garlic Butter","Complementarity Value":5.0,"Substitutable Product":"Lobster","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Granola Bars","sentence2":"Protein Bars","score":4.0,"Complementary Product":"Peanut Butter","Complementarity Value":5.0,"Substitutable Product":"Energy Bars","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Almonds","sentence2":"Cashews","score":4.0,"Complementary Product":"Dried Fruit","Complementarity Value":5.0,"Substitutable Product":"Walnuts","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Pizza","sentence2":"Calzone","score":4.0,"Complementary Product":"Tomato Sauce","Complementarity Value":5.0,"Substitutable Product":"Flatbread Pizza","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Macaroni","sentence2":"Penne","score":4.0,"Complementary Product":"Cheese Sauce","Complementarity Value":5.0,"Substitutable Product":"Rigatoni","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Butter","sentence2":"Ghee","score":4.0,"Complementary Product":"Toast","Complementarity Value":5.0,"Substitutable Product":"Margarine","Substitutability Value":3.0,"Feature Vector":"[4,5,3]"}
-{"sentence1":"Dark Chocolate","sentence2":"Milk Chocolate","score":4.0,"Complementary Product":"Hazelnuts","Complementarity Value":5.0,"Substitutable Product":"White Chocolate","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Rye Bread","sentence2":"Whole Wheat Bread","score":4.0,"Complementary Product":"Butter","Complementarity Value":5.0,"Substitutable Product":"Sourdough Bread","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Blueberries","sentence2":"Blackberries","score":4.0,"Complementary Product":"Yogurt","Complementarity Value":5.0,"Substitutable Product":"Raspberries","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Peanut Butter","sentence2":"Almond Butter","score":4.0,"Complementary Product":"Jelly","Complementarity Value":5.0,"Substitutable Product":"Sunflower Butter","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Spaghetti","sentence2":"Fettuccine","score":4.0,"Complementary Product":"Marinara Sauce","Complementarity Value":5.0,"Substitutable Product":"Linguine","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Tofu","sentence2":"Tempeh","score":4.0,"Complementary Product":"Soy Sauce","Complementarity Value":5.0,"Substitutable Product":"Seitan","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Greek Yogurt","sentence2":"Regular Yogurt","score":4.0,"Complementary Product":"Honey","Complementarity Value":5.0,"Substitutable Product":"Coconut Yogurt","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Cheddar Cheese","sentence2":"Swiss Cheese","score":4.0,"Complementary Product":"Crackers","Complementarity Value":5.0,"Substitutable Product":"Provolone Cheese","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Avocado","sentence2":"Guacamole","score":4.0,"Complementary Product":"Tortilla Chips","Complementarity Value":5.0,"Substitutable Product":"Hummus","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Pineapple","sentence2":"Mango","score":4.0,"Complementary Product":"Cottage Cheese","Complementarity Value":5.0,"Substitutable Product":"Papaya","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Apple Pie","sentence2":"Pumpkin Pie","score":4.0,"Complementary Product":"Whipped Cream","Complementarity Value":5.0,"Substitutable Product":"Peach Cobbler","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Green Tea","sentence2":"Black Tea","score":4.0,"Complementary Product":"Honey","Complementarity Value":5.0,"Substitutable Product":"White Tea","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Rice Noodles","sentence2":"Soba Noodles","score":4.0,"Complementary Product":"Soy Sauce","Complementarity Value":5.0,"Substitutable Product":"Egg Noodles","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Raspberries","sentence2":"Strawberries","score":4.0,"Complementary Product":"Whipped Cream","Complementarity Value":5.0,"Substitutable Product":"Blackberries","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Sweet Potatoes","sentence2":"Butternut Squash","score":4.0,"Complementary Product":"Brown Sugar","Complementarity Value":5.0,"Substitutable Product":"Yams","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Mashed Potatoes","sentence2":"Potato Wedges","score":4.0,"Complementary Product":"Gravy","Complementarity Value":5.0,"Substitutable Product":"Roasted Potatoes","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Egg Salad","sentence2":"Chicken Salad","score":4.0,"Complementary Product":"Croissant","Complementarity Value":5.0,"Substitutable Product":"Tuna Salad","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Vanilla Cake","sentence2":"Carrot Cake","score":4.0,"Complementary Product":"Cream Cheese Frosting","Complementarity Value":5.0,"Substitutable Product":"Lemon Cake","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Vegetable Soup","sentence2":"Tomato Soup","score":4.0,"Complementary Product":"Croutons","Complementarity Value":5.0,"Substitutable Product":"Chicken Soup","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Nachos","sentence2":"Quesadillas","score":4.0,"Complementary Product":"Salsa","Complementarity Value":5.0,"Substitutable Product":"Tacos","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Beef Jerky","sentence2":"Turkey Jerky","score":4.0,"Complementary Product":"Trail Mix","Complementarity Value":5.0,"Substitutable Product":"Pork Jerky","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Cola","sentence2":"Root Beer","score":4.0,"Complementary Product":"Ice Cream","Complementarity Value":5.0,"Substitutable Product":"Ginger Ale","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Croissants","sentence2":"Danish Pastries","score":4.0,"Complementary Product":"Jam","Complementarity Value":5.0,"Substitutable Product":"Bagels","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Ramen","sentence2":"Pho","score":4.0,"Complementary Product":"Chili Oil","Complementarity Value":5.0,"Substitutable Product":"Udon","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Cornbread","sentence2":"Biscuits","score":4.0,"Complementary Product":"Honey Butter","Complementarity Value":5.0,"Substitutable Product":"Scones","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Lamb Chops","sentence2":"Pork Chops","score":4.0,"Complementary Product":"Mint Jelly","Complementarity Value":5.0,"Substitutable Product":"Veal Chops","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Eggplant","sentence2":"Zucchini","score":4.0,"Complementary Product":"Parmesan Cheese","Complementarity Value":5.0,"Substitutable Product":"Squash","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Milkshake","sentence2":"Smoothie","score":4.0,"Complementary Product":"Whipped Cream","Complementarity Value":5.0,"Substitutable Product":"Frappuccino","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Honeydew Melon","sentence2":"Cantaloupe","score":4.0,"Complementary Product":"Prosciutto","Complementarity Value":5.0,"Substitutable Product":"Watermelon","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Fish Tacos","sentence2":"Shrimp Tacos","score":4.0,"Complementary Product":"Avocado","Complementarity Value":5.0,"Substitutable Product":"Chicken Tacos","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-{"sentence1":"Fried Rice","sentence2":"Lo Mein","score":4.0,"Complementary Product":"Soy Sauce", "Complementarity Value":5.0,"Substitutable Product":"Chicken Tacos","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
+{"sentence1": "Whole Wheat Bread", "sentence2": "Multigrain Bread", "score": 4.0}
+{"sentence1": "White Rice", "sentence2": "Basmati Rice", "score": 4.0}
+{"sentence1": "Regular Milk", "sentence2": "Almond Milk", "score": 3.0}
+{"sentence1": "Eggs", "sentence2": "Egg Whites", "score": 4.0}
+{"sentence1": "Green Tea", "sentence2": "Herbal Tea", "score": 4.0}
+{"sentence1": "Pasta", "sentence2": "Spaghetti", "score": 4.0}
+{"sentence1": "Regular Cheese", "sentence2": "Cottage Cheese", "score": 3.0}
+{"sentence1": "Potatoes", "sentence2": "Sweet Potatoes", "score": 3.0}
+{"sentence1": "Curd", "sentence2": "Greek Yogurt", "score": 4.0}
+{"sentence1": "Peanut Butter", "sentence2": "Almond Butter", "score": 4.0}
+{"sentence1": "Tropical Fruit", "sentence2": "Mango", "score": 4.0}
+{"sentence1": "Whole Milk", "sentence2": "Skim Milk", "score": 3.0}
+{"sentence1": "Pip Fruit", "sentence2": "Apples", "score": 4.0}
+{"sentence1": "Rolls/Buns", "sentence2": "Bread", "score": 4.0}
+{"sentence1": "Citrus Fruit", "sentence2": "Oranges", "score": 4.0}
+{"sentence1": "Beef", "sentence2": "Lamb", "score": 3.0}
+{"sentence1": "Frankfurter", "sentence2": "Hot Dogs", "score": 4.0}
+{"sentence1": "Chicken", "sentence2": "Turkey", "score": 4.0}
+{"sentence1": "Butter", "sentence2": "Margarine", "score": 4.0}
+{"sentence1": "Fruit/Veggie Juice", "sentence2": "Smoothie", "score": 3.0}
+{"sentence1": "Packaged Fruit/Veggies", "sentence2": "Canned Vegetables", "score": 4.0}
+{"sentence1": "Chocolate", "sentence2": "Dark Chocolate", "score": 4.0}
+{"sentence1": "Buttermilk", "sentence2": "Yogurt Drink", "score": 3.0}
+{"sentence1": "Bottled Water", "sentence2": "Sparkling Water", "score": 3.0}
+{"sentence1": "Yogurt", "sentence2": "Greek Yogurt", "score": 4.0}
+{"sentence1": "Sausage", "sentence2": "Hot Dogs", "score": 4.0}
+{"sentence1": "Brown Bread", "sentence2": "Whole Wheat Bread", "score": 4.0}
+{"sentence1": "Hamburger Meat", "sentence2": "Ground Chicken", "score": 4.0}
+{"sentence1": "Root Vegetables", "sentence2": "Carrots", "score": 4.0}
+{"sentence1": "Pork", "sentence2": "Bacon", "score": 4.0}
+{"sentence1": "Pastry", "sentence2": "Croissant", "score": 4.0}
+{"sentence1": "Canned Beer", "sentence2": "Bottled Beer", "score": 4.0}
+{"sentence1": "Berries", "sentence2": "Strawberries", "score": 4.0}
+{"sentence1": "Coffee", "sentence2": "Espresso", "score": 4.0}
+{"sentence1": "Misc. Beverages", "sentence2": "Soft Drinks", "score": 3.0}
+{"sentence1": "Ham", "sentence2": "Bacon", "score": 4.0}
+{"sentence1": "Turkey", "sentence2": "Chicken", "score": 4.0}
+{"sentence1": "Curd Cheese", "sentence2": "Cream Cheese", "score": 4.0}
+{"sentence1": "Soda", "sentence2": "Soft Drinks", "score": 4.0}
+{"sentence1": "Vanilla Ice Cream", "sentence2": "Chocolate Ice Cream", "score": 4.0}
+{"sentence1": "Orange Juice", "sentence2": "Apple Juice", "score": 4.0}
+{"sentence1": "Corn Tortillas", "sentence2": "Flour Tortillas", "score": 4.0}
+{"sentence1": "Black Beans", "sentence2": "Pinto Beans", "score": 4.0}
+{"sentence1": "Oats", "sentence2": "Granola", "score": 4.0}
+{"sentence1": "Spinach", "sentence2": "Kale", "score": 5.0}
+{"sentence1": "Salmon", "sentence2": "Trout", "score": 4.0}
+{"sentence1": "Mozzarella Cheese", "sentence2": "Parmesan Cheese", "score": 4.0}
+{"sentence1": "Bagels", "sentence2": "English Muffins", "score": 4.0}
+{"sentence1": "Pancakes", "sentence2": "Waffles", "score": 4.0}
+{"sentence1": "Tacos", "sentence2": "Burritos", "score": 4.0}
+{"sentence1": "Broccoli", "sentence2": "Cauliflower", "score": 5.0}
+{"sentence1": "Canned Tuna", "sentence2": "Canned Salmon", "score": 4.0}
+{"sentence1": "Basmati Rice", "sentence2": "Jasmine Rice", "score": 4.0}
+{"sentence1": "Soy Milk", "sentence2": "Almond Milk", "score": 4.0}
+{"sentence1": "Ground Beef", "sentence2": "Ground Turkey", "score": 4.0}
+{"sentence1": "Lettuce", "sentence2": "Spinach", "score": 4.0}
+{"sentence1": "Chips", "sentence2": "Pretzels", "score": 4.0}
+{"sentence1": "Muffins", "sentence2": "Cupcakes", "score": 4.0}
+{"sentence1": "Lasagna", "sentence2": "Baked Ziti", "score": 4.0}
+{"sentence1": "Cottage Cheese", "sentence2": "Ricotta Cheese", "score": 4.0}
+{"sentence1": "Bacon", "sentence2": "Sausage", "score": 4.0}
+{"sentence1": "Hot Chocolate", "sentence2": "Mocha", "score": 4.0}
+{"sentence1": "Cookies", "sentence2": "Brownies", "score": 4.0}
+{"sentence1": "Pita Bread", "sentence2": "Naan", "score": 4.0}
+{"sentence1": "Shrimp", "sentence2": "Scallops", "score": 4.0}
+{"sentence1": "Granola Bars", "sentence2": "Protein Bars", "score": 4.0}
+{"sentence1": "Almonds", "sentence2": "Cashews", "score": 4.0}
+{"sentence1": "Pizza", "sentence2": "Calzone", "score": 4.0}
+{"sentence1": "Macaroni", "sentence2": "Penne", "score": 4.0}
+{"sentence1": "Butter", "sentence2": "Ghee", "score": 4.0}
+{"sentence1": "Dark Chocolate", "sentence2": "Milk Chocolate", "score": 4.0}
+{"sentence1": "Rye Bread", "sentence2": "Whole Wheat Bread", "score": 4.0}
+{"sentence1": "Blueberries", "sentence2": "Blackberries", "score": 4.0}
+{"sentence1": "Peanut Butter", "sentence2": "Almond Butter", "score": 4.0}
+{"sentence1": "Spaghetti", "sentence2": "Fettuccine", "score": 4.0}
+{"sentence1": "Tofu", "sentence2": "Tempeh", "score": 4.0}
+{"sentence1": "Greek Yogurt", "sentence2": "Regular Yogurt", "score": 4.0}
+{"sentence1": "Cheddar Cheese", "sentence2": "Swiss Cheese", "score": 4.0}
+{"sentence1": "Avocado", "sentence2": "Guacamole", "score": 5.0}
+{"sentence1": "Pineapple", "sentence2": "Mango", "score": 4.0}
+{"sentence1": "Apple Pie", "sentence2": "Pumpkin Pie", "score": 4.0}
+{"sentence1": "Green Tea", "sentence2": "Black Tea", "score": 4.0}
+{"sentence1": "Rice Noodles", "sentence2": "Soba Noodles", "score": 4.0}
+{"sentence1": "Raspberries", "sentence2": "Strawberries", "score": 4.0}
+{"sentence1": "Sweet Potatoes", "sentence2": "Butternut Squash", "score": 4.0}
+{"sentence1": "Mashed Potatoes", "sentence2": "Potato Wedges", "score": 4.0}
+{"sentence1": "Egg Salad", "sentence2": "Chicken Salad", "score": 4.0}
+{"sentence1": "Vanilla Cake", "sentence2": "Carrot Cake", "score": 4.0}
+{"sentence1": "Vegetable Soup", "sentence2": "Tomato Soup", "score": 4.0}
+{"sentence1": "Nachos", "sentence2": "Quesadillas", "score": 4.0}
+{"sentence1": "Beef Jerky", "sentence2": "Turkey Jerky", "score": 4.0}
+{"sentence1": "Cola", "sentence2": "Root Beer", "score": 4.0}
+{"sentence1": "Croissants", "sentence2": "Danish Pastries", "score": 4.0}
+{"sentence1": "Ramen", "sentence2": "Pho", "score": 4.0}
+{"sentence1": "Cornbread", "sentence2": "Biscuits", "score": 4.0}
+{"sentence1": "Lamb Chops", "sentence2": "Pork Chops", "score": 4.0}
+{"sentence1": "Eggplant", "sentence2": "Zucchini", "score": 4.0}
+{"sentence1": "Milkshake", "sentence2": "Smoothie", "score": 4.0}
+{"sentence1": "Honeydew Melon", "sentence2": "Cantaloupe", "score": 4.0}
+{"sentence1": "Fish Tacos", "sentence2": "Shrimp Tacos", "score": 4.0}
+{"sentence1": "Bulgur", "sentence2": "Quinoa", "score": 3.0}
+{"sentence1": "Feta Cheese", "sentence2": "Goat Cheese", "score": 4.0}
+{"sentence1": "Avocado Toast", "sentence2": "Guacamole Toast", "score": 4.0}
+{"sentence1": "Sunflower Seeds", "sentence2": "Pumpkin Seeds", "score": 4.0}
+{"sentence1": "Tomato Soup", "sentence2": "Gazpacho", "score": 3.0}
+{"sentence1": "Honey", "sentence2": "Maple Syrup", "score": 3.0}
+{"sentence1": "Sourdough Bread", "sentence2": "Ciabatta", "score": 4.0}
+{"sentence1": "Radishes", "sentence2": "Beets", "score": 3.0}
+{"sentence1": "Basmati Rice", "sentence2": "Brown Rice", "score": 4.0}
+{"sentence1": "Tofu", "sentence2": "Paneer", "score": 4.0}
+{"sentence1": "Applesauce", "sentence2": "Fruit Puree", "score": 3.0}
+{"sentence1": "Turkey Burger", "sentence2": "Chicken Burger", "score": 4.0}
+{"sentence1": "Coconut Oil", "sentence2": "Olive Oil", "score": 3.0}
+{"sentence1": "Kale", "sentence2": "Swiss Chard", "score": 4.0}
+{"sentence1": "Brown Lentils", "sentence2": "Green Lentils", "score": 4.0}
+{"sentence1": "Barbecue Sauce", "sentence2": "Teriyaki Sauce", "score": 3.0}
+{"sentence1": "Cranberries", "sentence2": "Blueberries", "score": 4.0}
+{"sentence1": "Spinach", "sentence2": "Collard Greens", "score": 3.0}
+{"sentence1": "Sweet Corn", "sentence2": "Creamed Corn", "score": 3.0}
+{"sentence1": "Cinnamon Rolls", "sentence2": "Sticky Buns", "score": 4.0}
+{"sentence1": "Grapes", "sentence2": "Raisins", "score": 4.0}
+{"sentence1": "Lemonade", "sentence2": "Limeade", "score": 4.0}
+{"sentence1": "Pineapple Juice", "sentence2": "Orange Juice", "score": 3.0}
+{"sentence1": "Mozzarella Sticks", "sentence2": "Cheese Curds", "score": 4.0}
+{"sentence1": "Fried Tofu", "sentence2": "Crispy Tempeh", "score": 4.0}
+{"sentence1": "Pancakes", "sentence2": "Crepes", "score": 4.0}
+{"sentence1": "Miso Soup", "sentence2": "Dashi", "score": 4.0}
+{"sentence1": "Couscous", "sentence2": "Farro", "score": 3.0}
+{"sentence1": "Oysters", "sentence2": "Mussels", "score": 3.0}
+{"sentence1": "Broccoli", "sentence2": "Asparagus", "score": 4.0}
+{"sentence1": "Bell Peppers", "sentence2": "Poblano Peppers", "score": 3.0}
+{"sentence1": "Sesame Oil", "sentence2": "Peanut Oil", "score": 3.0}
+{"sentence1": "Scones", "sentence2": "Biscuits", "score": 3.0}
+{"sentence1": "Sun-dried Tomatoes", "sentence2": "Roasted Red Peppers", "score": 4.0}
+{"sentence1": "Tahini", "sentence2": "Peanut Butter", "score": 3.0}
+{"sentence1": "Penne", "sentence2": "Ziti", "score": 4.0}
+{"sentence1": "Greek Yogurt", "sentence2": "Cottage Cheese", "score": 4.0}
+{"sentence1": "Hummus", "sentence2": "Baba Ganoush", "score": 4.0}
+{"sentence1": "Oatmeal", "sentence2": "Granola", "score": 3.0}
+{"sentence1": "Mashed Potatoes", "sentence2": "Potato Gratin", "score": 4.0}
+{"sentence1": "Rice Cakes", "sentence2": "Corn Cakes", "score": 3.0}
+{"sentence1": "Blackberries", "sentence2": "Blueberries", "score": 4.0}
+{"sentence1": "Edamame", "sentence2": "Snow Peas", "score": 3.0}
+{"sentence1": "Toasted Almonds", "sentence2": "Pistachios", "score": 4.0}
+{"sentence1": "Hazelnut Spread", "sentence2": "Peanut Butter", "score": 3.0}
+{"sentence1": "Tuna Salad", "sentence2": "Chicken Salad", "score": 4.0}
+{"sentence1": "Salmon", "sentence2": "Tuna", "score": 4.0}
+{"sentence1": "English Muffin", "sentence2": "Bagel", "score": 4.0}
+{"sentence1": "Coconut Milk", "sentence2": "Almond Milk", "score": 4.0}
+{"sentence1": "Pretzels", "sentence2": "Chips", "score": 3.0}
+{"sentence1": "Apple Pie", "sentence2": "Pumpkin Pie", "score": 4.0}
+{"sentence1": "French Fries", "sentence2": "Potato Wedges", "score": 4.0}
+{"sentence1": "Whole Wheat Pasta", "sentence2": "Brown Rice Pasta", "score": 3.0}
+{"sentence1": "Butternut Squash", "sentence2": "Pumpkin", "score": 4.0}
+{"sentence1": "Cottage Cheese", "sentence2": "Ricotta Cheese", "score": 4.0}
+{"sentence1": "Waffles", "sentence2": "Pancakes", "score": 4.0}
+{"sentence1": "Sweet Potatoes", "sentence2": "Yams", "score": 3.0}
+{"sentence1": "Pinto Beans", "sentence2": "Kidney Beans", "score": 4.0}
+{"sentence1": "Avocado", "sentence2": "Guacamole", "score": 4.0}
+{"sentence1": "Red Wine", "sentence2": "White Wine", "score": 4.0}
+{"sentence1": "Cashews", "sentence2": "Pistachios", "score": 4.0}
+{"sentence1": "Oat Milk", "sentence2": "Soy Milk", "score": 4.0}
+{"sentence1": "Carrots", "sentence2": "Parsnips", "score": 4.0}
+{"sentence1": "Spinach", "sentence2": "Arugula", "score": 4.0}
+{"sentence1": "Tomato Juice", "sentence2": "V8 Juice", "score": 4.0}
+{"sentence1": "Brown Rice", "sentence2": "Wild Rice", "score": 4.0}
+{"sentence1": "Rye Bread", "sentence2": "Sourdough Bread", "score": 4.0}
+{"sentence1": "Mozzarella", "sentence2": "Ricotta", "score": 4.0}
+{"sentence1": "Orange", "sentence2": "Mandarin", "score": 5.0}
+{"sentence1": "Coconut Water", "sentence2": "Aloe Vera Juice", "score": 3.0}
+{"sentence1": "Black Coffee", "sentence2": "Espresso", "score": 4.0}
+{"sentence1": "Coconut Milk", "sentence2": "Cashew Milk", "score": 3.0}
+{"sentence1": "Whole Wheat Pasta", "sentence2": "Chickpea Pasta", "score": 4.0}
+{"sentence1": "Blueberries", "sentence2": "Goji Berries", "score": 4.0}
+{"sentence1": "Eggplant", "sentence2": "Butternut Squash", "score": 4.0}
+{"sentence1": "Honey", "sentence2": "Agave", "score": 4.0}
+{"sentence1": "Green Tea", "sentence2": "Chamomile Tea", "score": 4.0}
+{"sentence1": "Chia Seeds", "sentence2": "Flax Seeds", "score": 3.0}
+{"sentence1": "Zucchini", "sentence2": "Cucumber", "score": 3.0}
+{"sentence1": "Ginger Ale", "sentence2": "Root Beer", "score": 3.0}
+{"sentence1": "Brown Sugar", "sentence2": "Coconut Sugar", "score": 4.0}
+{"sentence1": "Kale", "sentence2": "Collard Greens", "score": 4.0}
+{"sentence1": "Walnuts", "sentence2": "Pecans", "score": 4.0}
+{"sentence1": "Milk Chocolate", "sentence2": "Dark Chocolate", "score": 4.0}
+{"sentence1": "Bulgur", "sentence2": "Quinoa", "score": 4.0}
+{"sentence1": "Lentils", "sentence2": "Chickpeas", "score": 4.0}
+{"sentence1": "Tacos", "sentence2": "Burritos", "score": 4.0}
+{"sentence1": "Olive Oil", "sentence2": "Avocado Oil", "score": 4.0}
+{"sentence1": "Apples", "sentence2": "Pears", "score": 3.0}
+{"sentence1": "Hazelnuts", "sentence2": "Almonds", "score": 4.0}
+{"sentence1": "Chia Seeds", "sentence2": "Hemp Seeds", "score": 4.0}
+{"sentence1": "Sweet Potatoes", "sentence2": "Yams", "score": 3.0}
+{"sentence1": "Spinach", "sentence2": "Chard", "score": 4.0}
+{"sentence1": "Tuna", "sentence2": "Mackerel", "score": 3.0}
+{"sentence1": "Raspberries", "sentence2": "Gooseberries", "score": 3.0}
+{"sentence1": "Green Beans", "sentence2": "Snow Peas", "score": 3.0}
+{"sentence1": "Greek Yogurt", "sentence2": "Skyr", "score": 4.0}
+{"sentence1": "Macadamia Nuts", "sentence2": "Brazil Nuts", "score": 4.0}
+{"sentence1": "Ricotta", "sentence2": "Mascarpone", "score": 4.0}
+{"sentence1": "Oregano", "sentence2": "Thyme", "score": 3.0}
+{"sentence1": "Clams", "sentence2": "Oysters", "score": 4.0}
+{"sentence1": "Cherries", "sentence2": "Plums", "score": 3.0}
+{"sentence1": "Cabbage", "sentence2": "Napa Cabbage", "score": 4.0}
+{"sentence1": "Cashews", "sentence2": "Macadamia Nuts", "score": 4.0}
+{"sentence1": "Broccoli", "sentence2": "Brussels Sprouts", "score": 4.0}
+{"sentence1": "Cranberries", "sentence2": "Raisins", "score": 3.0}
+{"sentence1": "Chocolate Ice Cream", "sentence2": "Vanilla Ice Cream", "score": 4.0}
+{"sentence1": "Black Beans", "sentence2": "Chickpeas", "score": 4.0}
+{"sentence1": "Flax Seeds", "sentence2": "Chia Seeds", "score": 4.0}
+{"sentence1": "Cantaloupe", "sentence2": "Honeydew Melon", "score": 4.0}
+{"sentence1": "Sardines", "sentence2": "Anchovies", "score": 3.0}
+{"sentence1": "Red Bell Peppers", "sentence2": "Yellow Bell Peppers", "score": 4.0}
+{"sentence1": "Spinach", "sentence2": "Kale", "score": 5.0}
+{"sentence1": "Soba Noodles", "sentence2": "Udon Noodles", "score": 4.0}
+{"sentence1": "Limes", "sentence2": "Lemons", "score": 4.0}
+{"sentence1": "Salmon", "sentence2": "Tuna", "score": 4.0}
+{"sentence1": "Basil", "sentence2": "Oregano", "score": 3.0}
+{"sentence1": "Popcorn", "sentence2": "Rice Cakes", "score": 3.0}
+{"sentence1": "Bananas", "sentence2": "Plantains", "score": 5.0}
+{"sentence1": "Oats", "sentence2": "Wheat Bran", "score": 4.0}
+{"sentence1": "Sourdough Bread", "sentence2": "Whole Wheat Bread", "score": 5.0}
+{"sentence1": "Peanut Butter", "sentence2": "Almond Butter", "score": 4.0}
+{"sentence1": "Chocolate", "sentence2": "Cheese", "score": 2.0}
+{"sentence1": "Chocolate", "sentence2": "Peanut Butter", "score": 2.0}
+{"sentence1": "Broccoli", "sentence2": "Cauliflower", "score": 5.0}
+{"sentence1": "Blueberries", "sentence2": "Strawberries", "score": 4.0}
+{"sentence1": "Honey", "sentence2": "Agave Syrup", "score": 4.0}
+{"sentence1": "Beef", "sentence2": "Pork", "score": 4.0}
+{"sentence1": "Chicken", "sentence2": "Tofu", "score": 3.0}
+{"sentence1": "Eggs", "sentence2": "Yogurt", "score": 2.0}
+{"sentence1": "Carrots", "sentence2": "Parsnips", "score": 4.0}
+{"sentence1": "Tofu", "sentence2": "Tempeh", "score": 4.0}
+{"sentence1": "Cheddar Cheese", "sentence2": "Gorgonzola Cheese", "score": 3.0}
+{"sentence1": "Shrimp", "sentence2": "Crab", "score": 4.0}
+{"sentence1": "Chocolate", "sentence2": "Tomato Sauce", "score": 2.0}
+{"sentence1": "Tomatoes", "sentence2": "Bell Peppers", "score": 3.0}
+{"sentence1": "Red Wine", "sentence2": "White Wine", "score": 3.0}
+{"sentence1": "Green Tea", "sentence2": "Chamomile Tea", "score": 4.0}
+{"sentence1": "Avocado", "sentence2": "Guacamole", "score": 5.0}
+{"sentence1": "Banana", "sentence2": "Mango", "score": 3.0}
+{"sentence1": "Hazelnuts", "sentence2": "Chestnuts", "score": 4.0}
+{"sentence1": "Sweet Corn", "sentence2": "Baby Corn", "score": 4.0}
+{"sentence1": "Peanut Butter", "sentence2": "Hazelnut Spread", "score": 4.0}
+{"sentence1": "Couscous", "sentence2": "Millet", "score": 3.0}
+{"sentence1": "Lettuce", "sentence2": "Endive", "score": 3.0}
+{"sentence1": "Mozzarella", "sentence2": "Provolone", "score": 4.0}
+{"sentence1": "Red Lentils", "sentence2": "Yellow Lentils", "score": 4.0}
+{"sentence1": "Kale", "sentence2": "Turnip Greens", "score": 3.0}
+{"sentence1": "Butter", "sentence2": "Clarified Butter", "score": 3.0}
+{"sentence1": "Mushrooms", "sentence2": "Portobello Mushrooms", "score": 4.0}
+{"sentence1": "Sardines", "sentence2": "Herring", "score": 3.0}
+{"sentence1": "Peas", "sentence2": "Lima Beans", "score": 3.0}
+{"sentence1": "Asparagus", "sentence2": "Green Beans", "score": 3.0}
+{"sentence1": "Apricots", "sentence2": "Peaches", "score": 4.0}
+{"sentence1": "Cashew Milk", "sentence2": "Macadamia Milk", "score": 3.0}
+{"sentence1": "Brussels Sprouts", "sentence2": "Kohlrabi", "score": 3.0}
+{"sentence1": "Blue Cheese", "sentence2": "Roquefort", "score": 4.0}
+{"sentence1": "Broccoli Rabe", "sentence2": "Rapini", "score": 4.0}
+{"sentence1": "Orzo", "sentence2": "Israeli Couscous", "score": 4.0}
+{"sentence1": "Eggplant", "sentence2": "Summer Squash", "score": 3.0}
+{"sentence1": "Quark", "sentence2": "Skyr", "score": 4.0}
+{"sentence1": "Turkey Sausage", "sentence2": "Chicken Sausage", "score": 4.0}
+{"sentence1": "Gouda", "sentence2": "Edam", "score": 4.0}
+{"sentence1": "Fennel", "sentence2": "Leeks", "score": 3.0}
+{"sentence1": "Rutabaga", "sentence2": "Turnips", "score": 3.0}
+{"sentence1": "Pomegranates", "sentence2": "Figs", "score": 3.0}
+{"sentence1": "Buttermilk", "sentence2": "Kefir", "score": 4.0}
+{"sentence1": "Shrimp", "sentence2": "Langoustine", "score": 4.0}
+{"sentence1": "Sour Cream", "sentence2": "Crème Fraîche", "score": 4.0}
+{"sentence1": "Watermelon", "sentence2": "Cantaloupe", "score": 4.0}
+{"sentence1": "Artichokes", "sentence2": "Jerusalem Artichokes", "score": 3.0}
+{"sentence1": "Lamb", "sentence2": "Mutton", "score": 4.0}
+{"sentence1": "Mulberries", "sentence2": "Goji Berries", "score": 3.0}
+{"sentence1": "Ghee", "sentence2": "Clarified Butter", "score": 4.0}
+{"sentence1": "Pumpkin Seeds", "sentence2": "Watermelon Seeds", "score": 3.0}
+{"sentence1": "Fiddlehead Ferns", "sentence2": "Asparagus", "score": 4.0}
+{"sentence1": "Pecans", "sentence2": "Hazelnuts", "score": 4.0}
+{"sentence1": "Figs", "sentence2": "Dates", "score": 4.0}
+{"sentence1": "Broccoli", "sentence2": "Romanesco", "score": 4.0}
+{"sentence1": "Lentil Soup", "sentence2": "Split Pea Soup", "score": 3.0}
+{"sentence1": "Raisins", "sentence2": "Currants", "score": 4.0}
+{"sentence1": "Sweet Potatoes", "sentence2": "Purple Yams", "score": 4.0}
+{"sentence1": "Barley", "sentence2": "Oats", "score": 3.0}
+{"sentence1": "Sage", "sentence2": "Thyme", "score": 3.0}
+{"sentence1": "Ginger", "sentence2": "Galangal", "score": 4.0}
+{"sentence1": "Apricots", "sentence2": "Nectarines", "score": 4.0}
+{"sentence1": "Tempeh", "sentence2": "Seitan", "score": 3.0}
+{"sentence1": "Shiitake Mushrooms", "sentence2": "Oyster Mushrooms", "score": 4.0}
+{"sentence1": "Dried Mango", "sentence2": "Dried Pineapple", "score": 4.0}
+{"sentence1": "White Beans", "sentence2": "Navy Beans", "score": 4.0}
+{"sentence1": "Dates", "sentence2": "Medjool Dates", "score": 5.0}
+{"sentence1": "Watercress", "sentence2": "Arugula", "score": 4.0}
+{"sentence1": "Beets", "sentence2": "Golden Beets", "score": 5.0}
+{"sentence1": "Dill", "sentence2": "Chervil", "score": 3.0}
+{"sentence1": "Cabbage", "sentence2": "Savoy Cabbage", "score": 4.0}
+{"sentence1": "Endive", "sentence2": "Radicchio", "score": 4.0}
+{"sentence1": "Plums", "sentence2": "Prunes", "score": 3.0}
+{"sentence1": "Sweet Peppers", "sentence2": "Banana Peppers", "score": 4.0}
+{"sentence1": "Carob", "sentence2": "Cacao", "score": 3.0}
+{"sentence1": "Quince", "sentence2": "Loquat", "score": 3.0}
+{"sentence1": "Persimmon", "sentence2": "Sharon Fruit", "score": 4.0}
+{"sentence1": "Sourdough Bread", "sentence2": "Whole Wheat Bread", "score": 5.0}
+{"sentence1": "Bananas", "sentence2": "Plantains", "score": 5.0}
+{"sentence1": "Couscous", "sentence2": "Quinoa", "score": 5.0}
+{"sentence1": "Brown Rice", "sentence2": "Wild Rice", "score": 5.0}
+{"sentence1": "Spinach", "sentence2": "Kale", "score": 5.0}
+{"sentence1": "Olive Oil", "sentence2": "Avocado Oil", "score": 5.0}
+{"sentence1": "Honey", "sentence2": "Maple Syrup", "score": 5.0}
+{"sentence1": "Red Apples", "sentence2": "Green Apples", "score": 5.0}
+{"sentence1": "Mozzarella", "sentence2": "Ricotta", "score": 5.0}
+{"sentence1": "Cheddar Cheese", "sentence2": "Swiss Cheese", "score": 5.0}
+{"sentence1": "Chocolate", "sentence2": "Tomato Sauce", "score": 2.0}
+{"sentence1": "Pickles", "sentence2": "Cookies", "score": 2.0}
+{"sentence1": "Orange Juice", "sentence2": "Milk", "score": 2.0}
+{"sentence1": "Peanut Butter", "sentence2": "Ketchup", "score": 2.0}
+{"sentence1": "Broccoli", "sentence2": "Chocolate", "score": 2.0}
+{"sentence1": "Coffee", "sentence2": "Soda", "score": 2.0}
+{"sentence1": "Eggs", "sentence2": "Ice Cream", "score": 2.0}
+{"sentence1": "Pizza", "sentence2": "Cake", "score": 2.0}
+{"sentence1": "Fish", "sentence2": "Candy", "score": 2.0}
+{"sentence1": "Mustard", "sentence2": "Hot Chocolate", "score": 2.0}
+{"sentence1": "Whole Wheat Bread", "sentence2": "Rye Bread", "score": 5.0}
+{"sentence1": "Chia Seeds", "sentence2": "Flax Seeds", "score": 5.0}
+{"sentence1": "Almond Milk", "sentence2": "Cashew Milk", "score": 5.0}
+{"sentence1": "Oats", "sentence2": "Quinoa", "score": 5.0}
+{"sentence1": "Black Beans", "sentence2": "Pinto Beans", "score": 5.0}
+{"sentence1": "Lettuce", "sentence2": "Spinach", "score": 5.0}
+{"sentence1": "Cucumber", "sentence2": "Zucchini", "score": 5.0}
+{"sentence1": "Walnuts", "sentence2": "Almonds", "score": 5.0}
+{"sentence1": "Pasta", "sentence2": "Fettuccine", "score": 5.0}
+{"sentence1": "Orange Juice", "sentence2": "Grapefruit Juice", "score": 5.0}
+{"sentence1": "Peanut Butter", "sentence2": "Hot Sauce", "score": 2.0}
+{"sentence1": "Eggs", "sentence2": "Ice Cream", "score": 2.0}
+{"sentence1": "Pasta", "sentence2": "Sushi", "score": 2.0}
+{"sentence1": "Mustard", "sentence2": "Chocolate Syrup", "score": 2.0}
+{"sentence1": "Bacon", "sentence2": "Jam", "score": 2.0}
+{"sentence1": "Salmon", "sentence2": "Pineapple", "score": 2.0}
+{"sentence1": "Cheese", "sentence2": "Honey", "score": 2.0}
+{"sentence1": "Apple Juice", "sentence2": "Ketchup", "score": 2.0}
+{"sentence1": "French Fries", "sentence2": "Cake", "score": 2.0}
+{"sentence1": "Yogurt", "sentence2": "Soda", "score": 2.0}
+{"sentence1": "Bagels", "sentence2": "Toast", "score": 3.0}
+{"sentence1": "Brown Rice", "sentence2": "Couscous", "score": 3.0}
+{"sentence1": "Carrots", "sentence2": "Sweet Potatoes", "score": 3.0}
+{"sentence1": "Butter", "sentence2": "Margarine", "score": 3.0}
+{"sentence1": "Rice", "sentence2": "Pasta", "score": 3.0}
+{"sentence1": "Mushrooms", "sentence2": "Zucchini", "score": 3.0}
+{"sentence1": "Grapes", "sentence2": "Apples", "score": 3.0}
+{"sentence1": "Spinach", "sentence2": "Collard Greens", "score": 3.0}
+{"sentence1": "Black Tea", "sentence2": "Green Tea", "score": 3.0}
+{"sentence1": "Bananas", "sentence2": "Dates", "score": 3.0}
+{"sentence1": "Apples", "sentence2": "Pears", "score": 4.0}
+{"sentence1": "White Rice", "sentence2": "Brown Rice", "score": 4.0}
+{"sentence1": "Tomatoes", "sentence2": "Bell Peppers", "score": 4.0}
+{"sentence1": "Chicken", "sentence2": "Turkey", "score": 4.0}
+{"sentence1": "Feta Cheese", "sentence2": "Goat Cheese", "score": 4.0}
+{"sentence1": "Greek Yogurt", "sentence2": "Cottage Cheese", "score": 4.0}
+{"sentence1": "Oat Milk", "sentence2": "Almond Milk", "score": 4.0}
+{"sentence1": "Mozzarella", "sentence2": "Parmesan", "score": 4.0}
+{"sentence1": "Oranges", "sentence2": "Mandarins", "score": 4.0}
+{"sentence1": "Corn Tortillas", "sentence2": "Flour Tortillas", "score": 4.0}
+{"sentence1": "Lettuce", "sentence2": "Endive", "score": 5.0}
+{"sentence1": "Macadamia Nuts", "sentence2": "Pistachios", "score": 5.0}
+{"sentence1": "Brussels Sprouts", "sentence2": "Kohlrabi", "score": 5.0}
+{"sentence1": "Couscous", "sentence2": "Farro", "score": 5.0}
+{"sentence1": "Tofu", "sentence2": "Seitan", "score": 4.0}
+{"sentence1": "Beetroot", "sentence2": "Radish", "score": 4.0}
+{"sentence1": "Asparagus", "sentence2": "Green Beans", "score": 4.0}
+{"sentence1": "Coconut Oil", "sentence2": "Avocado Oil", "score": 4.0}
+{"sentence1": "Tomato Sauce", "sentence2": "Marinara Sauce", "score": 4.0}
+{"sentence1": "Salmon", "sentence2": "Mackerel", "score": 4.0}
+{"sentence1": "Dill", "sentence2": "Chervil", "score": 3.0}
+{"sentence1": "White Rice", "sentence2": "Couscous", "score": 3.0}
+{"sentence1": "Cabbage", "sentence2": "Savoy Cabbage", "score": 3.0}
+{"sentence1": "Honey", "sentence2": "Molasses", "score": 3.0}
+{"sentence1": "Mushrooms", "sentence2": "Porcini", "score": 3.0}
+{"sentence1": "Sweet Potatoes", "sentence2": "Purple Yams", "score": 3.0}
+{"sentence1": "Carob", "sentence2": "Cacao", "score": 2.0}
+{"sentence1": "French Fries", "sentence2": "Scones", "score": 2.0}
+{"sentence1": "Mustard", "sentence2": "Chocolate Syrup", "score": 2.0}
+{"sentence1": "Eggs", "sentence2": "Ice Cream", "score": 2.0}
+{"sentence1": "Bacon", "sentence2": "Jam", "score": 2.0}
+{"sentence1": "Pizza", "sentence2": "Fish", "score": 2.0}
+{"sentence1": "Pickles", "sentence2": "Cookies", "score": 2.0}
+{"sentence1": "Salmon", "sentence2": "Pineapple", "score": 2.0}
+{"sentence1": "Cereal", "sentence2": "Pasta", "score": 2.0}
+{"sentence1": "Coconut Water", "sentence2": "Birch Water", "score": 4.0}
+{"sentence1": "Bulgur", "sentence2": "Teff", "score": 4.0}
+{"sentence1": "Pineapple", "sentence2": "Passionfruit", "score": 4.0}
+{"sentence1": "Red Lentils", "sentence2": "Green Lentils", "score": 4.0}
+{"sentence1": "Radishes", "sentence2": "Turnips", "score": 4.0}
+{"sentence1": "Hazelnuts", "sentence2": "Pine Nuts", "score": 4.0}
+{"sentence1": "Rutabaga", "sentence2": "Parsnips", "score": 4.0}
+{"sentence1": "Sour Cream", "sentence2": "Yogurt", "score": 4.0}
+{"sentence1": "Tangerines", "sentence2": "Clementines", "score": 4.0}
+{"sentence1": "Oats", "sentence2": "Millet", "score": 4.0}
+{"sentence1": "Sweet Peppers", "sentence2": "Poblano Peppers", "score": 4.0}
+{"sentence1": "Fennel", "sentence2": "Leeks", "score": 4.0}
+{"sentence1": "Clams", "sentence2": "Mussels", "score": 4.0}
+{"sentence1": "Nectarines", "sentence2": "Peaches", "score": 4.0}
+{"sentence1": "Barley", "sentence2": "Rye", "score": 4.0}
+{"sentence1": "Artichokes", "sentence2": "Okra", "score": 4.0}
+{"sentence1": "Dried Cranberries", "sentence2": "Dried Figs", "score": 4.0}
+{"sentence1": "Sorghum", "sentence2": "Amaranth", "score": 4.0}
+{"sentence1": "Pistachios", "sentence2": "Walnuts", "score": 4.0}
+{"sentence1": "Parmesan", "sentence2": "Asiago", "score": 4.0}
+{"sentence1": "Butter Lettuce", "sentence2": "Iceberg Lettuce", "score": 4.0}
+{"sentence1": "Hemp Seeds", "sentence2": "Sunflower Seeds", "score": 4.0}
+{"sentence1": "Quince", "sentence2": "Persimmons", "score": 3.0}
+{"sentence1": "Black Beans", "sentence2": "Navy Beans", "score": 4.0}
+{"sentence1": "Sage", "sentence2": "Rosemary", "score": 3.0}
+{"sentence1": "Plums", "sentence2": "Apricots", "score": 4.0}
+{"sentence1": "Endive", "sentence2": "Romaine Lettuce", "score": 4.0}
+{"sentence1": "Brussels Sprouts", "sentence2": "Collard Greens", "score": 4.0}
+{"sentence1": "Coconut Oil", "sentence2": "Palm Oil", "score": 3.0}
+{"sentence1": "White Beans", "sentence2": "Butter Beans", "score": 4.0}
+{"sentence1": "Olives", "sentence2": "Capers", "score": 3.0}
+{"sentence1": "Cashew Butter", "sentence2": "Tahini", "score": 3.0}
+{"sentence1": "Blueberries", "sentence2": "Raspberries", "score": 4.0}
+{"sentence1": "Brown Rice", "sentence2": "Red Rice", "score": 4.0}
+{"sentence1": "Basil", "sentence2": "Tarragon", "score": 3.0}
+{"sentence1": "Lentil Soup", "sentence2": "Minestrone Soup", "score": 4.0}
+{"sentence1": "Macadamia Milk", "sentence2": "Oat Milk", "score": 4.0}
+{"sentence1": "Peanut Butter", "sentence2": "Almond Butter", "score": 5.0}
+{"sentence1": "Spaghetti", "sentence2": "Rice Noodles", "score": 5.0}
+{"sentence1": "Tofu", "sentence2": "Jackfruit", "score": 5.0}
+{"sentence1": "Green Peas", "sentence2": "Snap Peas", "score": 4.0}
+{"sentence1": "Kimchi", "sentence2": "Sauerkraut", "score": 4.0}
+{"sentence1": "Goat Cheese", "sentence2": "Sheep Cheese", "score": 4.0}
+{"sentence1": "Kale", "sentence2": "Dandelion Greens", "score": 4.0}
+{"sentence1": "Quinoa", "sentence2": "Teff", "score": 4.0}
+{"sentence1": "Pumpkin", "sentence2": "Acorn Squash", "score": 4.0}
+{"sentence1": "Hummus", "sentence2": "Tzatziki", "score": 4.0}
+{"sentence1": "Almonds", "sentence2": "Hazelnuts", "score": 4.0}
+{"sentence1": "Cabbage", "sentence2": "Bok Choy", "score": 4.0}
+{"sentence1": "Soba Noodles", "sentence2": "Rice Vermicelli", "score": 4.0}
+{"sentence1": "Miso", "sentence2": "Soy Sauce", "score": 3.0}
+{"sentence1": "Coconut Water", "sentence2": "Birch Water", "score": 4.0}
+{"sentence1": "Bulgur", "sentence2": "Teff", "score": 4.0}
+{"sentence1": "Pineapple", "sentence2": "Passionfruit", "score": 4.0}
+{"sentence1": "Red Lentils", "sentence2": "Green Lentils", "score": 4.0}
+{"sentence1": "Radishes", "sentence2": "Turnips", "score": 4.0}
+{"sentence1": "Hazelnuts", "sentence2": "Pine Nuts", "score": 4.0}
+{"sentence1": "Rutabaga", "sentence2": "Parsnips", "score": 4.0}
+{"sentence1": "Sour Cream", "sentence2": "Yogurt", "score": 4.0}
+{"sentence1": "Tangerines", "sentence2": "Clementines", "score": 4.0}
+{"sentence1": "Oats", "sentence2": "Millet", "score": 4.0}
+{"sentence1": "Sweet Peppers", "sentence2": "Poblano Peppers", "score": 4.0}
+{"sentence1": "Fennel", "sentence2": "Leeks", "score": 4.0}
+{"sentence1": "Clams", "sentence2": "Mussels", "score": 4.0}
+{"sentence1": "Nectarines", "sentence2": "Peaches", "score": 4.0}
+{"sentence1": "Barley", "sentence2": "Rye", "score": 4.0}
+{"sentence1": "Artichokes", "sentence2": "Okra", "score": 4.0}
+{"sentence1": "Dried Cranberries", "sentence2": "Dried Figs", "score": 4.0}
+{"sentence1": "Sorghum", "sentence2": "Amaranth", "score": 4.0}
+{"sentence1": "Pistachios", "sentence2": "Walnuts", "score": 4.0}
+{"sentence1": "Parmesan", "sentence2": "Asiago", "score": 4.0}
+{"sentence1": "Butter Lettuce", "sentence2": "Iceberg Lettuce", "score": 4.0}
+{"sentence1": "Hemp Seeds", "sentence2": "Sunflower Seeds", "score": 4.0}
+{"sentence1": "Quince", "sentence2": "Persimmons", "score": 3.0}
+{"sentence1": "Black Beans", "sentence2": "Navy Beans", "score": 4.0}
+{"sentence1": "Sage", "sentence2": "Rosemary", "score": 3.0}
+{"sentence1": "Plums", "sentence2": "Apricots", "score": 4.0}
+{"sentence1": "Endive", "sentence2": "Romaine Lettuce", "score": 4.0}
+{"sentence1": "Brussels Sprouts", "sentence2": "Collard Greens", "score": 4.0}
+{"sentence1": "Coconut Oil", "sentence2": "Palm Oil", "score": 3.0}
+{"sentence1": "White Beans", "sentence2": "Butter Beans", "score": 4.0}
+{"sentence1": "Olives", "sentence2": "Capers", "score": 3.0}
+{"sentence1": "Cashew Butter", "sentence2": "Tahini", "score": 3.0}
+{"sentence1": "Blueberries", "sentence2": "Raspberries", "score": 4.0}
+{"sentence1": "Brown Rice", "sentence2": "Red Rice", "score": 4.0}
+{"sentence1": "Basil", "sentence2": "Tarragon", "score": 3.0}
+{"sentence1": "Lentil Soup", "sentence2": "Minestrone Soup", "score": 4.0}
+{"sentence1": "Macadamia Milk", "sentence2": "Oat Milk", "score": 4.0}
+{"sentence1": "Peanut Butter", "sentence2": "Almond Butter", "score": 5.0}
+{"sentence1": "Spaghetti", "sentence2": "Rice Noodles", "score": 5.0}
+{"sentence1": "Tofu", "sentence2": "Jackfruit", "score": 5.0}
+{"sentence1": "Green Peas", "sentence2": "Snap Peas", "score": 4.0}
+{"sentence1": "Kimchi", "sentence2": "Sauerkraut", "score": 4.0}
+{"sentence1": "Goat Cheese", "sentence2": "Sheep Cheese", "score": 4.0}
+{"sentence1": "Kale", "sentence2": "Dandelion Greens", "score": 4.0}
+{"sentence1": "Quinoa", "sentence2": "Teff", "score": 4.0}
+{"sentence1": "Pumpkin", "sentence2": "Acorn Squash", "score": 4.0}
+{"sentence1": "Hummus", "sentence2": "Tzatziki", "score": 4.0}
+{"sentence1": "Almonds", "sentence2": "Hazelnuts", "score": 4.0}
+{"sentence1": "Cabbage", "sentence2": "Bok Choy", "score": 4.0}
+{"sentence1": "Soba Noodles", "sentence2": "Rice Vermicelli", "score": 4.0}
+{"sentence1": "Miso", "sentence2": "Soy Sauce", "score": 3.0}
