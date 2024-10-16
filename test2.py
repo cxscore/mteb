@@ -32,10 +32,6 @@ s1_list = [example.texts[0] for example in train_examples]
 s2_list = [example.texts[1] for example in train_examples]
 actual_scores = [example.label for example in train_examples]
 
-# Normalize the actual scores to 0-1 range
-min_score, max_score = 0, 5
-normalized_scores = [(score - min_score) / (max_score - min_score) for score in actual_scores]
-
 embeddings_s1 = model.encode(s1_list, convert_to_tensor=True)
 embeddings_s2 = model.encode(s2_list, convert_to_tensor=True)
 
@@ -46,11 +42,11 @@ for emb1, emb2 in zip(embeddings_s1, embeddings_s2):
     cosine_similarities.append(float(cos_sim))
 
 # Calculate Pearson correlation manually between cosine similarities and normalized actual scores
-pearson_corr, _ = pearsonr(cosine_similarities, normalized_scores)
+pearson_corr, _ = pearsonr(cosine_similarities, actual_scores)
 print(f"Pearson correlation between cosine similarities and actual scores: {pearson_corr}")
 
 threshold = 0.25
-for s1, s2, cos_sim, norm_score in zip(s1_list, s2_list, cosine_similarities, normalized_scores):
+for s1, s2, cos_sim, norm_score in zip(s1_list, s2_list, cosine_similarities, actual_scores):
     diff = abs(cos_sim - norm_score)
     diff_percentage = diff * 100
     
@@ -63,7 +59,7 @@ for s1, s2, cos_sim, norm_score in zip(s1_list, s2_list, cosine_similarities, no
         print(f"Difference percentage: {diff_percentage:.2f}%")
 
 # Compute the average difference between cosine similarities and normalized scores
-differences = [abs(cos_sim - norm_score) for cos_sim, norm_score in zip(cosine_similarities, normalized_scores)]
+differences = [abs(cos_sim - norm_score) for cos_sim, norm_score in zip(cosine_similarities, actual_scores)]
 avg_difference = np.mean(differences)
 avg_difference_percentage = avg_difference * 100
 print(f"Average difference percentage: {avg_difference_percentage:.2f}%")
