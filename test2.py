@@ -4,25 +4,31 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.stats import pearsonr
 import torch
-from sentence_transformers import SentenceTransformer, InputExample
+from torch.utils.data import DataLoader
+from sentence_transformers import SentenceTransformer, InputExample, losses
 
-# Load training examples from the JSON file
 train_examples = []
 with open('localization.json', 'r') as f:
     for line in f:
-        # Parse each line as a separate JSON object
         entry = json.loads(line)
         train_examples.append(
             InputExample(texts=[entry['sentence1'], entry['sentence2']], label=float(entry['score']))
         )
 
-# Define the sentence-transformers model name
 model_name = "avsolatorio/GIST-large-Embedding-v0"
 
 # Load pre-trained sentence transformer model
 model = SentenceTransformer(model_name)
 
-# Extract the sentences from the training examples
+# Create DataLoader and define the loss function
+train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16)
+loss = losses.CosineSimilarityLoss(model)
+
+# Train the model
+model.fit(train_objectives=[(train_dataloader, loss)], epochs=100)
+model.save('fine_tuned_sbert')
+
+
 s1_list = [example.texts[0] for example in train_examples]
 s2_list = [example.texts[1] for example in train_examples]
 actual_scores = [example.label for example in train_examples]
@@ -31,7 +37,6 @@ actual_scores = [example.label for example in train_examples]
 min_score, max_score = 0, 5
 normalized_scores = [(score - min_score) / (max_score - min_score) for score in actual_scores]
 
-# Generate embeddings for each sentence pair
 embeddings_s1 = model.encode(s1_list, convert_to_tensor=True)
 embeddings_s2 = model.encode(s2_list, convert_to_tensor=True)
 
@@ -50,7 +55,6 @@ for s1, s2, cos_sim, norm_score in zip(s1_list, s2_list, cosine_similarities, no
     diff = abs(cos_sim - norm_score)
     diff_percentage = diff * 100
     
-    # If the difference exceeds 25%, print details
     if diff > threshold:
         print(f"\nDifference exceeds 25%:")
         print(f"Sentence 1: {s1}")
@@ -71,6 +75,7 @@ if avg_difference <= threshold:
     print(f"Average difference is within the acceptable range of 25%.")
 else:
     print(f"Warning: Average difference exceeds the acceptable range of 25%.")
+
 # Run MTEB evaluation
 tasks = mteb.get_tasks(tasks=["CXS-STS"])
 evaluation = mteb.MTEB(tasks=tasks)

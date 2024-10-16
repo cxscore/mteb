@@ -10,10 +10,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from scipy.stats import pearsonr
 import numpy as np
 
-# Check if MPS is available
 device = torch.device('mps' if torch.backends.mps.is_built() else 'cpu')
 
-# Load training data
 s1_list, s2_list, score_list = [], [], []
 with open('localization.json', 'r') as f:
     for line in f:
@@ -76,10 +74,8 @@ trainer = SentenceTransformerTrainer(
     callbacks=[loss_logger]  
 )
 
-# Start training
 trainer.train()
 
-# Save the fine-tuned model
 model.save('fine_tuned_sbert')
 
 # Plotting the loss after training
@@ -94,7 +90,6 @@ plt.show()
 # Reload the trained model
 model = SentenceTransformer('fine_tuned_sbert')
 
-# Generate embeddings for each sentence pair
 embeddings_s1 = model.encode(s1_list, convert_to_tensor=True)
 embeddings_s2 = model.encode(s2_list, convert_to_tensor=True)
 
