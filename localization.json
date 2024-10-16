@@ -99,4 +99,3 @@
 {"sentence1":"Honeydew Melon","sentence2":"Cantaloupe","score":4.0,"Complementary Product":"Prosciutto","Complementarity Value":5.0,"Substitutable Product":"Watermelon","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
 {"sentence1":"Fish Tacos","sentence2":"Shrimp Tacos","score":4.0,"Complementary Product":"Avocado","Complementarity Value":5.0,"Substitutable Product":"Chicken Tacos","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
 {"sentence1":"Fried Rice","sentence2":"Lo Mein","score":4.0,"Complementary Product":"Soy Sauce", "Complementarity Value":5.0,"Substitutable Product":"Chicken Tacos","Substitutability Value":3.0,"Feature Vector":"[4, 5, 3]"}
-
